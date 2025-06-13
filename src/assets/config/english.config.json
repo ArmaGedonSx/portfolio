@@ -8,18 +8,16 @@
     "experience": "Experience",
     "contact": "Contact Me"
   },
-  "about": "Hello, my name is Daniel, I am 22 years old and I am a Web Developer. I specialize in the main front-end development frameworks such as Angular, React and Vue, although I also have essential knowledge of Back-End frameworks such as Sprintboot and Django. I am in my 9th cycle studying Computer Systems Engineering at the Universidad Privada del Norte and I really like the food from my country, Peru.",
+  "about": "Hi, my name is Daniel, and I'm a web developer. I specialize in the main front-end development frameworks, such as Angular, React, and Vue, although I also have basic knowledge of back-end frameworks such as Symphony and Django. I studied Computer Systems Engineering at the Universidad Privada del Norte (UPN). I'm self-taught, proactive, and easily adaptable to any project. My hobby is traveling the world and experiencing new cultures.",
   "skills":[
     "angular",
-    "react",
     "javascript",
     "css",
     "python",
     "django",
     "linux",
-    "html",
+    "php",
     "photoshop",
-    "springBoot",
     "bootstrap",
     "typescript",
     "vue",
@@ -72,7 +70,7 @@
       "company":"NTTDATA - Interbank group",
       "companyIcon":"/assets/img/nttdata-logo.jpg",
       "charge": "Front End Development",
-      "expDescription":"consumption of services, creation of micro fronts and responsive web design",
+      "expDescription":"Participant of the Janus project, a mortgage application from Interbank, as a junior developer",
       "startTime":"02-2022",
       "endTime":"07-2022",
       "implementedSkills":[
@@ -89,14 +87,44 @@
       "company":"Roblex",
       "companyIcon":"/assets/img/roblex-logo.jpg",
       "charge": "Front End Support",
-      "expDescription":"application support and creation of new functionalities",
+      "expDescription":"I was in charge of setting up a new flow for operations in the web application and several visual improvements to the main page",
       "startTime":"08-2022",
-      "endTime":"11-2022",
+      "endTime":"12-2022",
       "implementedSkills":[
         "angular",
         "figma",
         "npm",
         "git"
+      ]
+    },
+    {
+      "company":"Tkambio",
+      "companyIcon":"/assets/img/tkambio_icon.jpg",
+      "charge": "Front End Development",
+      "expDescription":"I was in charge of remodeling the main page dedicated to the expansion to Mexico and the USA.",
+      "startTime":"01-2023",
+      "endTime":"06-2023",
+      "implementedSkills":[
+        "vue",
+        "wordpress",
+        "php",
+        "bootstrap"
+      ]
+    },
+    {
+      "company":"Bulwark Pest Control",
+      "companyIcon":"/assets/img/bulwark_pest_control_logo.jpg",
+      "charge": "Front End Development",
+      "expDescription":"I'm responsible for the front-end area of ​​Tempest's website, a digital sales portal. I refactor and improve various components and handle new features at the client's request.",
+      "startTime":"06-2023",
+      "endTime":"2025",
+      "implementedSkills":[
+        "vue",
+        "linux",
+        "javascript",
+        "git",
+        "vite",
+        "bootstrap"
       ]
     }
   ],

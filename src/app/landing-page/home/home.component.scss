@@ -1,0 +1,46 @@
+
+// importar el font para usarlo \src\assets\fonts\GREYLIGHT DEMO.OTF
+@font-face {
+    font-family: 'GreyLightDemo';
+    src: url('/assets/fonts/GREYLIGHT DEMO.OTF') format('opentype');
+}
+
+.home-banner-title{
+    font-family: 'GreyLightDemo', sans-serif;
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: fit-content;
+}
+.home-banner-title-selector{
+    // width: 5px;
+    height: 100%;
+    // min-height: 10rem;
+    background-color: #f0f0f0;
+    border-radius: 0px;
+    // colocar animacion
+    display: block;
+    animation: breathing 1s linear infinite;
+}
+
+.home-banner-title-selected{
+    background-color: #0000007b;
+    padding: 0px 10px 0px 10px;
+    
+}
+
+@keyframes breathing {
+    0% {
+        background-color: #f0f0f0;
+    }
+    1%{
+        background-color: #f0f0f000;
+    }
+    60%{
+        background-color: #f0f0f000;
+    }
+    61%{
+        background-color: #f0f0f0;
+    }
+}

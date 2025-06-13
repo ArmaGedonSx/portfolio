@@ -2,7 +2,15 @@
 <div class="home-background" alt="keyboard background">
 <section class="home-container">
   <div class="home-banner">
-    <h1 class="home-banner-title">{{title}}</h1>
+    <h1 class="home-banner-title">
+      <!-- <span></span> -->
+      <div class="home-banner-title-selector" *ngIf="wordSelected">&nbsp;</div>
+      <span *ngIf="!wordSelected">&nbsp;</span>
+      <span [ngClass]="{'home-banner-title-selected': wordSelected}">{{title}}</span>
+      <div class="home-banner-title-selector" *ngIf="!wordSelected">&nbsp;</div>
+      <span *ngIf="wordSelected">&nbsp;</span>
+      <!-- <span>}</span> -->
+    </h1>
     <h4 class="home-banner-subtitle">{{subtitle}}</h4>
   </div>
 </section>

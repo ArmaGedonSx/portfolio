@@ -99,6 +99,16 @@
       "name": "VueJS",
       "organizationUrl": "https://vuejs.org/",
       "logoImg":"vuejs-logo.svg"
+    },
+    "wordpress":{
+      "name": "WordPress",
+      "organizationUrl": "https://wordpress.org/",
+      "logoImg":"wordpress-logo.svg"
+    },
+    "php":{
+      "name": "PHP",
+      "organizationUrl": "https://www.php.net/",
+      "logoImg":"php-logo.svg"
     }
 
   }
