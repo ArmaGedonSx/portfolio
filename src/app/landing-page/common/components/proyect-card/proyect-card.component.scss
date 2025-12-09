@@ -38,7 +38,7 @@ $duration-animation: 0.7s;
     color: $color-white;
     transition-property: bottom, height, border-radius;
     transition-duration: $duration-animation;
-
+    overflow: hidden;
     .proyect-title {
 
       inline-size: 250px;
@@ -46,7 +46,7 @@ $duration-animation: 0.7s;
       font-size: large;
       text-transform: uppercase;
       font-weight: bold;
-      color: inherit;
+      color: $color-blue-light;
 
     }
 
@@ -57,6 +57,7 @@ $duration-animation: 0.7s;
       overflow: hidden;
       text-overflow: ellipsis;
       font-size: small;
+      color: $color-gray-light;
       transition-property: white-space;
       transition-duration: $duration-animation;
     }
@@ -102,8 +103,8 @@ $duration-animation: 0.7s;
 
       .proyect-title {
         opacity: 100;
-        color: $color-blue;
-        -webkit-text-stroke: 0.1px $color-white;
+        color: $color-blue-light;
+        // -webkit-text-stroke: 0.1px $color-white;
       }
 
       .proyect-description {

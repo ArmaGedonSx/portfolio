@@ -30,6 +30,19 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.router.navigate(['']);
     this.loadConfig();
+    const sections = document.querySelectorAll('section');
+
+    window.addEventListener('scroll', () => {
+      let currentSectionId = '';
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 100 && rect.bottom >= 0) {
+          currentSectionId = section.id;
+          this.idSelected=section.id;
+        }
+      });
+
+    });
   }
   loadConfig() {
     this.dataService
@@ -63,12 +76,6 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   }
   @HostListener('window:scroll',['event'])
   onScroll(event:any){
-    this.idList.forEach((element)=>{
-      const pass=this.isInViewport(element);
-      if(pass){
-        this.idSelected=element.id;
-      }
-    });
-
+    
   }
 }

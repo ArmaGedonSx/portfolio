@@ -1,11 +1,12 @@
 @import './color-variables.scss';
+// @import '../../../assets/styles/_media.scss';
 
 a{
   text-decoration: none;
 }
 app-nav-bar{
   position: fixed;
-  top: 0;
+  top: 0px;
   width: 100%;
   z-index: 100000;
   background-color: $color-secondary;
@@ -19,27 +20,45 @@ app-nav-bar{
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-
+  justify-content: center;
+  @include md{
+    overflow: visible;
+  }
   .logo{
-    width: 100px;
-    height: 60px;
+    width: 80px;
+    height: 40px;
+    
     img{
-      filter: invert(1);
-      width: 100%;
-      height: 100%;
+      width: 5rem;
+      height: 5rem;
+      // width: 100%;
+      // height: 100%;
+    }
+    @include md{
+      width: 50px;
+      height: 50px;
+      img{
+        width: 4rem;
+        height: 4rem;
+      }
     }
   }
   .nav{
     display:flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
+    
     flex-wrap: wrap;
     list-style: none;
     margin: 0px;
     padding: 0px;
-    @media md {
-      justify-content: center;
+    width: unset;
+    justify-content: center;
+    @include md {
+      justify-content: space-around;
+      width: 100%;
+      // justify-content: center;
+
     }
     .nav-item{
       padding-block: 1em;
@@ -49,7 +68,9 @@ app-nav-bar{
       justify-content:center;
       align-items: center;
       color: $color-white;
-
+      &.logo{
+        padding: 0px;
+      }
       @include md{
         padding-block: 5px;
         margin-inline: 5px;

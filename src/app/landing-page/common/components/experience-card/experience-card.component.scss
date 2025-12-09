@@ -1,17 +1,15 @@
 @import '/src/assets/styles/color-variables.scss';
 @import '/src/assets/styles/media.scss';
 .experience-card{
+  
   &-container{
-    width: 480px;
-    height: 206px;
+    height: 100%;
     border-radius: 20px;
     padding: 20px;
-    margin: 20px;
     background-color: $color-blue-dark;
     text-align: left;
     @include md{
-      width: 80vw;
-      height: fit-content;
+      width: 90vw;
     }
   }
   &-header{
@@ -35,12 +33,13 @@
     font-weight: bolder;
   }
   &-body{
+    max-width: 100%;
+    height: calc(100% - 90px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-top: 14px;
-    padding-bottom: 20px;
-    height: 100px;
+    margin-left: 1em;
     font-size: small;
     span{
       margin-top: 10px;
@@ -54,7 +53,7 @@
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: wrap;
-
+    margin-top: 10px;
     // justify-content: center;
     // align-items: center;
     &-logos{
@@ -70,6 +69,23 @@
         max-width: 50px;
         max-height: 30px;
       }
+      @include md{
+        img{
+          max-width: 40px;
+          max-height: 25px;
+        }
+      }
     }
+    span{
+      font-size: medium;
+    }
+    @include md{
+      span{
+        font-size: 14px;
+      }
+    }
+  }
+  &-description{
+    font-weight: normal;
   }
 }

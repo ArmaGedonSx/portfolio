@@ -1,33 +1,60 @@
+@import '../../../assets/styles/_media.scss';
+@import '../../../assets/styles/color-variables.scss';
 
-// importar el font para usarlo \src\assets\fonts\GREYLIGHT DEMO.OTF
 @font-face {
     font-family: 'GreyLightDemo';
     src: url('/assets/fonts/GREYLIGHT DEMO.OTF') format('opentype');
 }
+@font-face {
+    font-family: 'CascadiaCode';
+    src: url('/assets/fonts/CASCADIACODE-REGULAR.OTF') format('opentype');
+}
 
-.home-banner-title{
-    font-family: 'GreyLightDemo', sans-serif;
-    display: flex ;
+.home-banner{
+    display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
-    height: fit-content;
+    flex-direction: column;
+    width: 100%;
+    min-height: fit-content;
+    position: relative;
+    z-index: 1;
+    
+}
+.home-banner-title{
+    font-family: 'CascadiaCode', sans-serif;
+    max-width: 100svw;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-align: right;
+    font-size: 9rem;
+    @include md{
+        font-size: 4rem;
+
+    }
+}
+.home-banner-title-container{
+    max-width: 1300px;
+    width: fit-content;
 }
 .home-banner-title-selector{
-    // width: 5px;
-    height: 100%;
-    // min-height: 10rem;
+    width: 10px;
     background-color: #f0f0f0;
     border-radius: 0px;
-    // colocar animacion
     display: block;
     animation: breathing 1s linear infinite;
 }
-
+.home-banner-subtitle{
+    color: $color-red;
+    font-size: x-large;
+    @include md{
+    font-size: small;
+    }
+    text-align: center;
+}
 .home-banner-title-selected{
     background-color: #0000007b;
-    padding: 0px 10px 0px 10px;
-    
+    width: fit-content;
 }
 
 @keyframes breathing {

@@ -7,24 +7,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  title:string ='Daniel Ortiz!';
+  title:string ='Daniel O.';
   subtitle:string ='<Front End Developer • Web Developer • Translator/>';
-  intervalTimer:number = 500;
+  intervalTimer:number = 400;
   wordSelected:Boolean = true;
   titleRoulete:Array<string> = [
-    'Daniel Ortiz!',
-    'DDO/',
+    'Daniel Ortiz',
+    'Koinu!',
+    '<DDO/>',
     'Front End!',
     'Web Developer!',
   ]; 
   constructor() { }
 
   ngOnInit(): void {
-    
+    if(this.isMobile()) {
+      this.titleRoulete = [
+        'Daniel O.',
+        'Koinu!',
+        '<DDO/>',
+        'Front End!',
+        'Developer!',
+      ];
+    }
     this.cicleTitle();
   }
-  // puedes crear una funcion asincrona para usar await
-
+  isMobile(): boolean {
+    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  }
 
   async cicleTitle():Promise<void> {
     while(true){

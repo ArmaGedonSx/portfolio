@@ -1,0 +1,13 @@
+@import '/src/assets/styles/media.scss';
+
+
+app-experience-card {
+  height: 100%;
+  width: 100%;
+  @include md {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

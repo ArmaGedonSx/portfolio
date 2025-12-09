@@ -10,12 +10,14 @@
 @import './assets/styles/proyects.scss';
 @import './assets/styles/experiences.scss';
 @import './assets/styles/contact.scss';
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-
-/* You can add global styles to this file, and also import other style files */
 html, body{
-  height: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: auto;
+
 }
 
 body{
@@ -73,11 +75,6 @@ h4{
 }
 
 app-landing-page{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content:flex-start;
-  text-align: center;
   width: 100%;
   height:fit-content;
 }
@@ -85,19 +82,25 @@ app-landing-page{
 button{
   border: none;
   border-radius: 10px;
-  color: $color-white;
+  color: $color-blue-dark;
   background-color: $color-blue-light;
-  padding-block: 10px;
-  padding-inline:18px;
+  padding-block: 7px;
+  padding-inline:10px;
   font-family: Poppins;
   font-weight: bold;
+  font-size: small;
+
   &:hover{
     cursor: pointer;
-    background-color: $color-blue;
+    background-color: $color-blue-dark;
+    color: $color-white;
   }
   &:active{
     // cursor:default;
     color: $color-gray;
     background-color: $color-blue-dark;
+  }
+  @include md{
+    font-size: medium;
   }
 }

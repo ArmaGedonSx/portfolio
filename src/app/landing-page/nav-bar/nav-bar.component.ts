@@ -8,6 +8,7 @@ import { Component, OnInit,Input, OnChanges, SimpleChanges } from '@angular/core
 export class NavBarComponent implements OnInit,OnChanges {
   @Input() linksNavBar!:any;
   @Input() selected: string='';
+  @Input() open: boolean=false;
   links: Array<any> = [];
   constructor() {
   }
@@ -26,14 +27,29 @@ export class NavBarComponent implements OnInit,OnChanges {
   ngOnInit(): void {
   }
 
-  onSelectItem(key:string){
+  onSelectItem(event:any,key:string){
+    console.log('onSelectItem',key);
+    // event.preventDefault();
     if(this.selected===key){
       this.selected='';
     }else{
       this.selected=key;
     }
+    setTimeout(() => {
+      const item = document.querySelector(`#${key}`);
+      if (item) {
+        item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
   }
   onLogo(){
     this.selected='';
+  }
+  toggleMenu() {
+    this.open = !this.open;
+  }
+
+  closeMenu() {
+    this.open = false;
   }
 }

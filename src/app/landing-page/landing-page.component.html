@@ -1,12 +1,22 @@
-<div class="container">
-  <app-home id="home"></app-home>
-  <app-about id="about" [aboutMessage]="DATA?.about"></app-about>
-  <app-skills id="skills" [skills]="skills"></app-skills>
-  <app-proyects id="projects" [projects]="projects"></app-proyects>
-  <app-experiences id="experience" [experiences]="DATA?.experience"></app-experiences>
-  <app-contact id="contact"></app-contact>
-</div>
+<!-- <div class=" p-0 m-0">
+  
+</div> -->
+<section id="home">
+  <app-home ></app-home>
+</section>
+<section id="about">
+  <app-about  [aboutMessage]="DATA?.about"></app-about>
+</section>
+<section id="skills">
+  <app-skills [skills]="skills"></app-skills>
+</section>
+<section id="projects">
+  <app-proyects [projects]="projects"></app-proyects>
+</section>
+<section id="experience">
+  <app-experiences [experiences]="DATA?.experience"></app-experiences>
+</section>
+<section id="contact">
+  <app-contact></app-contact>
+</section>
 <app-nav-bar [selected]="idSelected" [linksNavBar]="DATA?.navBar"></app-nav-bar>
-
-<!-- <app-skill-card skillName="html"></app-skill-card> -->
-<!-- <app-proyect-card></app-proyect-card> -->

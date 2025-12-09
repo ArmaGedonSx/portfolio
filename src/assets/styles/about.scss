@@ -1,18 +1,8 @@
 @import './media.scss';
 
 .about-card{
-  width: 100vw;
-  height: 350;
-  padding-top: 120px;
-  margin-bottom: 60px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content:center;
-  justify-items: center;
-  align-items: center;
+  width: 100% !important;
   .about-img{
-    margin: 3em;
     width: 300px;
     height: 300px;
     border-radius: 20px 0px 20px 0px;
@@ -44,26 +34,29 @@
     }
   }
   .about-info{
-    margin-left: 3em;
-    width: 520px;
+    
     text-align:left;
     h3{
       margin-top: 15px;
     }
     p{
       margin-top: 15px;
-
-      font-size:16px;
+      text-align: justify;
+      font-size:20px;
       font-weight: lighter;
-
+      max-width: 600px;
+      color: $color-gray-light;
+      // justify-content: space-around;
       @include md {
 
-        font-size:12px;
+        font-size:15px;
 
       }
     }
+    margin: 2em;
+
     @include md{
-      margin: 2em;
+      margin: 2em 0px;
     }
   }
 }

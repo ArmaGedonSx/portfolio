@@ -1,0 +1,55 @@
+@import '../../../assets/styles/color-variables.scss';
+
+.menu-btn {
+  font-size: 24px;
+  padding: 8px;
+  background: none;
+  border: none;
+  color:$color-white;
+}
+
+.mobile-nav {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  background: $color-blue-dark;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 2010;
+  display: none;
+  list-style: none;
+  transform: translateY(-100%);
+  animation: dropDown 0.3s ease;
+}
+
+.mobile-nav.open {
+  display: block;
+  transform: translateY(0);
+}
+
+.mobile-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav li a {
+  display: block;
+  padding: 16px;
+  text-decoration: none;
+  color: $color-white;
+}
+.mobile-nav li.selected {
+  background-color: $color-background;
+}
+
+@keyframes dropDown {
+  0% {
+    display: block;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+    
+}

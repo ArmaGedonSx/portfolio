@@ -8,7 +8,7 @@
     "experience": "Experience",
     "contact": "Contact Me"
   },
-  "about": "Hi, my name is Daniel, and I'm a web developer. I specialize in the main front-end development frameworks, such as Angular, React, and Vue, although I also have basic knowledge of back-end frameworks such as Symphony and Django. I studied Computer Systems Engineering at the Universidad Privada del Norte (UPN). I'm self-taught, proactive, and easily adaptable to any project. My hobby is traveling the world and experiencing new cultures.",
+  "about": "Hi, my name is <span class=\"color-white\">Daniel Ortiz</span>, and I'm a web developer. I specialize in the main <span class=\"color-white\">Front End</span> development frameworks, such as <span class=\"color-white\">Angular</span> and <span class=\"color-white\">Vue</span>, although I also have basic knowledge of back-end frameworks such as Symphony and Django. I studied <span class=\"color-white\">Computer Systems Engineering</span> at the Universidad Privada del Norte (UPN). I'm self-taught, proactive, and easily adaptable to any project. My hobby is traveling the world and experiencing new cultures.",
   "skills":[
     "angular",
     "javascript",
@@ -40,7 +40,7 @@
     },
     {
       "projectName":"Portal 2 Enviroment",
-      "projectURL":"https://finalproyectkoinu.herokuapp.com/",
+      "projectURL":"https://portal2eviromentproyect.web.app/",
       "githubRepository":"https://github.com/koinu1203/Portal2Enviroment-ProyectCGV-",
       "description":"Portal 2 environment modeled in javascript with the Threejs library",
       "previewImg":"Portal2Enviroment.jpg"
@@ -132,7 +132,7 @@
     "github":"https://github.com/koinu1203",
     "linkedin":"https://www.linkedin.com/in/danielortizpary/",
     "correo":"daniel_ortizpary@hotmail.com",
-    "instagram":"https://www.instagram.com/i_koinu/",
+    "instagram":"https://www.instagram.com/i.koinu/",
     "whastapp":"https://api.whatsapp.com/send?phone=51947638171"
   }
 }

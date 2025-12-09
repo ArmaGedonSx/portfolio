@@ -1,4 +1,5 @@
 export const IDS=[
+    'home',
     'about',
     'skills',
     'projects',
