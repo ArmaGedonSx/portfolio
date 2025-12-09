@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  portfolio-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: portfolio-app
+    ports:
+      - "${PORT:-4200}:4200"
+    volumes:
+      - ./src:/app/src
+      - ./angular.json:/app/angular.json
+      - ./tsconfig.json:/app/tsconfig.json
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=development
+    networks:
+      - portfolio-network
+
+networks:
+  portfolio-network:
+    driver: bridge

@@ -7,7 +7,13 @@
     "build": "ng build",
     "deploy": "ng build && firebase deploy",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up",
+    "docker:up:build": "docker-compose up --build",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f portfolio-frontend",
+    "docker:restart": "docker-compose restart"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +38,7 @@
     "@angular/cli": "~14.2.3",
     "@angular/compiler-cli": "^14.2.0",
     "@types/jasmine": "~4.0.0",
+    "@types/node": "~16.18.0",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",

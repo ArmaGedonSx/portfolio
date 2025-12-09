@@ -1,0 +1,16 @@
+node_modules
+npm-debug.log
+dist
+.git
+.gitignore
+README.md
+READMEOLD.md
+.angular
+.vscode
+coverage
+.env
+.firebase
+.firebaserc
+firebase.json
+y
+*.log
