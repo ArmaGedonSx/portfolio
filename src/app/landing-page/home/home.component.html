@@ -2,8 +2,8 @@
 <div class="home-background" alt="keyboard background">
 <section class="home-container align-items-start align-items-md-center">
   <div class="home-banner ps-3">
-    <div class="home-banner-title-container d-flex flex-column align-items-center ">
-      <h1 class="home-banner-title d-flex flex-row align-items-center justify-content-end">
+    <div class="home-banner-title-container flex-col items-center ">
+      <h1 class="home-banner-title flex row items-center justify-center">
         <div class="home-banner-title-selector" *ngIf="wordSelected">&nbsp;</div>
         <span [ngClass]="{'home-banner-title-selected': wordSelected}">{{title}}</span>
         <div class="home-banner-title-selector" *ngIf="!wordSelected">&nbsp;</div>

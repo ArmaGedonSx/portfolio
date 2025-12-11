@@ -1,6 +1,17 @@
-<!-- <div class=" p-0 m-0">
+<div class="">
+  <app-intro-splash></app-intro-splash>
   
-</div> -->
+  <section id="home">
+    <app-home ></app-home>
+  </section>
+  <section id="about">
+  <app-about  [aboutMessage]="DATA?.about"></app-about>
+</section>
+<section id="skills">
+  <app-skills [skills]="skills"></app-skills>
+</section>
+<app-particles-overlay></app-particles-overlay>
+</div>
 <!-- <section id="home">
   <app-home ></app-home>
 </section>
