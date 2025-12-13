@@ -1,36 +1,96 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
 
-  title:string ='Daniel O.';
-  subtitle:string ='<Front End Developer • Web Developer • Translator/>';
-  intervalTimer:number = 400;
+  title:string ='Daniel!';
+  subtitle:string ='<Web Developer/>';
+  intervalTimer:number = 250;
   wordSelected:Boolean = true;
   titleRoulete:Array<string> = [
-    'Daniel Ortiz',
+    'Daniel!',
+    'FrontEnd!',
+    'BackEnd!',
     'Koinu!',
-    '<DDO/>',
-    'Front End!',
-    'Web Developer!',
+    'Developer!',
   ]; 
-  constructor() { }
+  
+  constructor() { 
+    gsap.registerPlugin(ScrollTrigger);
+  }
 
   ngOnInit(): void {
     if(this.isMobile()) {
       this.titleRoulete = [
-        'Daniel O.',
+        'Daniel!',
         'Koinu!',
-        '<DDO/>',
         'Front End!',
+        'Back End!',
         'Developer!',
       ];
     }
     this.cicleTitle();
+  }
+
+  ngAfterViewInit(): void {
+    this.setupScrollAnimations();
+  }
+
+  private setupScrollAnimations(): void {
+    gsap.to('.home-banner-title', {
+      opacity: 0,
+      y: -100,
+      x: 40,
+      scrollTrigger: {
+        trigger: '.home-container',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1,
+        markers: false // Cambia a true para debug
+      }
+    });
+
+    gsap.to('.col-span', {
+      opacity: 0,
+      y: -80,
+      x: -40,
+      scrollTrigger: {
+        trigger: '.home-container',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1
+      }
+    });
+    gsap.to('.home-subtitle', {
+      opacity: 0,
+      y: -80,
+      x: 40,
+      scrollTrigger: {
+        trigger: '.home-container',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1
+      }
+    });
+
+    gsap.to('button', {
+      opacity: 0,
+      y: -80,
+      x: 40,
+
+      scrollTrigger: {
+        trigger: '.home-container',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1
+      }
+    });
   }
   isMobile(): boolean {
     return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -51,12 +111,11 @@ export class HomeComponent implements OnInit {
   async cleanTitle():Promise<boolean> {
     return new Promise<boolean>((resolve) => {
       this.wordSelected = true;
-      setTimeout(() => {
-        this.wordSelected = false;
-        this.title = '';
-        resolve(true);
+      setTimeout(async () => {
+        this.wordSelected = false;        
+        resolve(await this.deleteTitle());
       }
-      ,this.intervalTimer * 6);
+      ,this.intervalTimer * 10);
     });
   }
   setTitle(title:string):Promise<boolean> {
@@ -72,6 +131,20 @@ export class HomeComponent implements OnInit {
           resolve(true);
         }
       },this.intervalTimer);
+    });
+  }
+  deleteTitle():Promise<boolean> {
+    
+    return new Promise<boolean>((resolve) => {
+      const setTitleInterval = setInterval(() => {
+        // eliminar la última letra en cada intervalo de tiempo
+        if(this.title.length != 0) {
+          this.title = this.title.slice(0, -1);
+        } else {
+          clearInterval(setTitleInterval);
+          resolve(true);
+        }
+      },this.intervalTimer/3);
     });
   }
 }

@@ -109,6 +109,11 @@
       "name": "PHP",
       "organizationUrl": "https://www.php.net/",
       "logoImg":"php-logo.svg"
+    },
+    "sass":{
+      "name": "Sass",
+      "organizationUrl": "https://sass-lang.com/",
+      "logoImg":"sass-logo.png"
     }
 
   }

@@ -1,16 +1,27 @@
 <div class="skills-container">
+  
   <div class="skills-text">
-    <h2>skills</h2>
-    <h3>SPECIALIZED IN FRAMEWORKS AND NEW TECHNOLOGIES</h3>
+    <h2 class="text-[#9e8857] monoton-regular text-5xl">Technologies and knowledge</h2>
   </div>
-  <div *ngIf="technologies && skills.length>0"
-       class="skills-technologies">
-    <div class="skills-card"
-         *ngFor="let keySkill of skills">
-      <app-skill-card [skillName]="technologies[keySkill].name"
-                      [skillSVG]="technologies[keySkill].logoImg"
-                      [urlSkill]="technologies[keySkill].organizationUrl"></app-skill-card>
-    </div>
-
+  <div class="skill-grid grid grid-cols-12 gap-5 ps-[32px] pt-[70px]  relative">
+    <div class="absolute h-[464px] w-[32px] border-[#9e8857] border-r-4 border-t-4 top-0 left-0"></div>
+    <app-skill-section 
+      class="skill-section col-span-12"
+      [title]="'Languages'" 
+      [skills]="skills.languajes" 
+      [technologies]="technologies">
+    </app-skill-section>
+    <app-skill-section 
+      class="skill-section col-span-12"
+      [title]="'Frameworks'" 
+      [skills]="skills.frameworks" 
+      [technologies]="technologies">
+    </app-skill-section>
+    <app-skill-section 
+      class="skill-section col-span-12"
+      [title]="'Tools'" 
+      [skills]="skills.tools" 
+      [technologies]="technologies">
+    </app-skill-section>
   </div>
 </div>

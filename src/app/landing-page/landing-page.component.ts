@@ -13,7 +13,7 @@ import { DataService } from './common/services/data.service';
 })
 export class LandingPageComponent implements OnInit, OnDestroy {
   DATA: any;
-  skills:Array<string> = [];
+  skills:any = [];
   projects:Array<IProyect> = [];
   idList:Array<any> = [];
   idSelected:string = '';

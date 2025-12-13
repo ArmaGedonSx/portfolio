@@ -1,9 +1,13 @@
 .skill-card{
   max-height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 3px;
+  min-height: 50px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // margin: 5px;
+  width: fit-content;
+  align-self: center;
+  justify-self: center;
   img{
     height: 50px;
     transition-property: transform;

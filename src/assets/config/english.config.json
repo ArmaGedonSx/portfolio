@@ -9,71 +9,76 @@
     "contact": "Contact Me"
   },
   "about": "Hi, my name is <span class=\"color-white\">Daniel Ortiz</span>, and I'm a web developer. I specialize in the main <span class=\"color-white\">Front End</span> development frameworks, such as <span class=\"color-white\">Angular</span> and <span class=\"color-white\">Vue</span>, although I also have basic knowledge of back-end frameworks such as Symphony and Django. I studied <span class=\"color-white\">Computer Systems Engineering</span> at the Universidad Privada del Norte (UPN). I'm self-taught, proactive, and easily adaptable to any project. My hobby is traveling the world and experiencing new cultures.",
-  "skills":[
-    "angular",
-    "javascript",
-    "css",
-    "python",
-    "django",
-    "linux",
-    "php",
-    "photoshop",
-    "bootstrap",
-    "typescript",
-    "vue",
-    "vite"
-  ],
+  "skills": {
+    "languajes": [
+      "javascript",
+      "python",
+      "php"
+    ],
+    "frameworks": [
+      "django",
+      "vue",
+      "angular"
+    ],
+    "tools": [
+      "photoshop",
+      "typescript",
+      "linux",
+      "bootstrap",
+      "sass"
+    ]
+  },
   "projects": [
     {
-      "projectName":"E-GO",
-      "projectURL":"https://e-go-bff96.web.app/",
-      "githubRepository":"https://github.com/E-GOProyect",
-      "description":"E-GO is an app for creating and solving questionnaires, implementing websocket technology for use by several people in real time.",
-      "previewImg":"E-GO.jpg"
+      "projectName": "E-GO",
+      "projectURL": "https://e-go-bff96.web.app/",
+      "githubRepository": "https://github.com/E-GOProyect",
+      "description": "E-GO is an app for creating and solving questionnaires, implementing websocket technology for use by several people in real time.",
+      "previewImg": "E-GO.jpg"
     },
     {
-      "projectName":"Poke List",
-      "projectURL":"https://app-pokelist.web.app/#/",
-      "githubRepository":"https://github.com/koinu1203/PokeList",
-      "description":"Poke List is an app created for the search and visualization of the different pokemos present in the PokeAPI",
-      "previewImg":"Poke-List.jpg"
+      "projectName": "Poke List",
+      "projectURL": "https://app-pokelist.web.app/#/",
+      "githubRepository": "https://github.com/koinu1203/PokeList",
+      "description": "Poke List is an app created for the search and visualization of the different pokemos present in the PokeAPI",
+      "previewImg": "Poke-List.jpg"
     },
     {
-      "projectName":"Portal 2 Enviroment",
-      "projectURL":"https://portal2eviromentproyect.web.app/",
-      "githubRepository":"https://github.com/koinu1203/Portal2Enviroment-ProyectCGV-",
-      "description":"Portal 2 environment modeled in javascript with the Threejs library",
-      "previewImg":"Portal2Enviroment.jpg"
+      "projectName": "Portal 2 Enviroment",
+      "projectURL": "https://portal2eviromentproyect.web.app/",
+      "githubRepository": "https://github.com/koinu1203/Portal2Enviroment-ProyectCGV-",
+      "description": "Portal 2 environment modeled in javascript with the Threejs library",
+      "previewImg": "Portal2Enviroment.jpg"
     },
     {
-      "projectName":"Report Generator Page",
-      "githubRepository":"https://github.com/koinu1203/GenReports-Tkambio-front",
-      "projectURL":"https://koinu1203.github.io/GenReports-Tkambio-front/",
-      "description":"This is the layout of a responsive graphic interface for the digital exchange house Tkambio",
-      "previewImg":"GenReports-Tkambio.jpg"
+      "projectName": "Report Generator Page",
+      "githubRepository": "https://github.com/koinu1203/GenReports-Tkambio-front",
+      "projectURL": "https://koinu1203.github.io/GenReports-Tkambio-front/",
+      "description": "This is the layout of a responsive graphic interface for the digital exchange house Tkambio",
+      "previewImg": "GenReports-Tkambio.jpg"
     },
     {
-      "projectName":"Airline Proyect",
-      "githubRepository":"https://github.com/koinu1203/Airline-Bootcamp-Proyect-01",
-      "description":"The planning department of a well-known airline is requesting a computer program to estimate ticket sales for each commercial flight of its aircraft fleet for certain national routes.",
-      "previewImg":"logos/python-logo.svg"
+      "projectName": "Airline Proyect",
+      "githubRepository": "https://github.com/koinu1203/Airline-Bootcamp-Proyect-01",
+      "description": "The planning department of a well-known airline is requesting a computer program to estimate ticket sales for each commercial flight of its aircraft fleet for certain national routes.",
+      "previewImg": "logos/python-logo.svg"
     },
     {
-      "projectName":"Adopcion Back End",
-      "githubRepository":"https://github.com/koinu1203/backend_App_Adopcion",
-      "description":"A small API created with Php for the consumption and manipulation of data in an animal shelter",
-      "previewImg":"logos/php-logo.svg"
+      "projectName": "Adopcion Back End",
+      "githubRepository": "https://github.com/koinu1203/backend_App_Adopcion",
+      "description": "A small API created with Php for the consumption and manipulation of data in an animal shelter",
+      "previewImg": "logos/php-logo.svg"
     }
   ],
-  "experience":[
+  "experience": [
     {
-      "company":"NTTDATA - Interbank group",
-      "companyIcon":"/assets/img/nttdata-logo.jpg",
+      "company": "NTTDATA - Interbank group",
+      "companyIcon": "/assets/img/nttdata-logo.jpg",
       "charge": "Front End Development",
-      "expDescription":"Participant of the Janus project, a mortgage application from Interbank, as a junior developer",
-      "startTime":"02-2022",
-      "endTime":"07-2022",
-      "implementedSkills":[
+      "expDescription": "Participant of the Janus project, a mortgage application from Interbank, as a junior developer",
+      "startTime": "02-2022",
+      "endTime": "07-2022",
+      "implementedSkills": [
         "angular",
         "stenciljs",
         "css",
@@ -84,13 +89,13 @@
       ]
     },
     {
-      "company":"Roblex",
-      "companyIcon":"/assets/img/roblex-logo.jpg",
+      "company": "Roblex",
+      "companyIcon": "/assets/img/roblex-logo.jpg",
       "charge": "Front End Support",
-      "expDescription":"I was in charge of setting up a new flow for operations in the web application and several visual improvements to the main page",
-      "startTime":"08-2022",
-      "endTime":"12-2022",
-      "implementedSkills":[
+      "expDescription": "I was in charge of setting up a new flow for operations in the web application and several visual improvements to the main page",
+      "startTime": "08-2022",
+      "endTime": "12-2022",
+      "implementedSkills": [
         "angular",
         "figma",
         "npm",
@@ -98,13 +103,13 @@
       ]
     },
     {
-      "company":"Tkambio",
-      "companyIcon":"/assets/img/tkambio_icon.jpg",
+      "company": "Tkambio",
+      "companyIcon": "/assets/img/tkambio_icon.jpg",
       "charge": "Front End Development",
-      "expDescription":"I was in charge of remodeling the main page dedicated to the expansion to Mexico and the USA.",
-      "startTime":"01-2023",
-      "endTime":"06-2023",
-      "implementedSkills":[
+      "expDescription": "I was in charge of remodeling the main page dedicated to the expansion to Mexico and the USA.",
+      "startTime": "01-2023",
+      "endTime": "06-2023",
+      "implementedSkills": [
         "vue",
         "wordpress",
         "php",
@@ -112,13 +117,13 @@
       ]
     },
     {
-      "company":"Bulwark Pest Control",
-      "companyIcon":"/assets/img/bulwark_pest_control_logo.jpg",
+      "company": "Bulwark Pest Control",
+      "companyIcon": "/assets/img/bulwark_pest_control_logo.jpg",
       "charge": "Front End Development",
-      "expDescription":"I'm responsible for the front-end area of ​​Tempest's website, a digital sales portal. I refactor and improve various components and handle new features at the client's request.",
-      "startTime":"06-2023",
-      "endTime":"2025",
-      "implementedSkills":[
+      "expDescription": "I'm responsible for the front-end area of ​​Tempest's website, a digital sales portal. I refactor and improve various components and handle new features at the client's request.",
+      "startTime": "06-2023",
+      "endTime": "2025",
+      "implementedSkills": [
         "vue",
         "linux",
         "javascript",
@@ -128,11 +133,11 @@
       ]
     }
   ],
-  "contact":{
-    "github":"https://github.com/koinu1203",
-    "linkedin":"https://www.linkedin.com/in/danielortizpary/",
-    "correo":"daniel_ortizpary@hotmail.com",
-    "instagram":"https://www.instagram.com/i.koinu/",
-    "whastapp":"https://api.whatsapp.com/send?phone=51947638171"
+  "contact": {
+    "github": "https://github.com/koinu1203",
+    "linkedin": "https://www.linkedin.com/in/danielortizpary/",
+    "correo": "daniel_ortizpary@hotmail.com",
+    "instagram": "https://www.instagram.com/i.koinu/",
+    "whastapp": "https://api.whatsapp.com/send?phone=51947638171"
   }
 }

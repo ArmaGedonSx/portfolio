@@ -1,15 +1,49 @@
-
 <div class="home-background" alt="keyboard background">
-<section class="home-container align-items-start align-items-md-center">
-  <div class="home-banner ps-3">
-    <div class="home-banner-title-container flex-col items-center ">
-      <h1 class="home-banner-title flex row items-center justify-center">
-        <div class="home-banner-title-selector" *ngIf="wordSelected">&nbsp;</div>
-        <span [ngClass]="{'home-banner-title-selected': wordSelected}">{{title}}</span>
-        <div class="home-banner-title-selector" *ngIf="!wordSelected">&nbsp;</div>
-      </h1>
-      <h4 class="home-banner-subtitle">{{subtitle}}</h4>
+  <section class="home-container">
+    <div class="grid grid-cols-12 gap-4">
+      <div class="col-span-12 md:col-span-9 grid grid-cols-12 gap-4">
+        <p class="col-span-12 home-banner-title flex items-start justify-start inter-500 flex flex-col">
+          <span class="text-white/80 block items-start text-xl md:text-4xl">
+            Hi, I'm&nbsp;
+          </span>
+          <span class="flex items-center justify-start ms-4 md:ms-4">
+            <span [ngClass]="{ 'text-4xl sm:text-6xl md:text-6xl monoton-regular':true}">{{title}}</span>
+            <span class="home-banner-title-selector text-5xl sm:text-6xl md:text-7xl ms-1" *ngIf="true">&nbsp;</span>
+          </span>
+        </p>
+        <p
+          class="home-subtitle col-span-12 md:col-span-6 text-white/80 inter-300 text-sm leading-[1.4rem] md:leading-[1.75rem] md:text-xl">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere nisi turpis, nec fringilla lacus
+          interdum sed. Integer eu est sit amet enim rutrum sodales convallis ac lectus. Nulla ut leo
+        </p>
+        <div class="col-span-12">
+          <button type="button"
+            class=" px-8 rounded-none inter-800 uppercase text-[#212121] text-xl bg-[#9e8857] ">Hire&nbsp;Me</button>
+        </div>
+      </div>
+      <div class="col-span-12 md:col-span-3">
+        <div class="absolute bottom-[10%] md:right-[4%] w-full">
+          <div class="grid grid-cols-3 md:grid-cols-1 gap-8 text-white/80 inter-300 text-center md:text-right ">
+            <div class="col-span">
+              <h5 class="text-4xl text-[#9e8857] font-black mb-1.5">
+                5<span class="text-2xl">+</span>
+              </h5>
+              <span class="">Years of Experience</span>
+            </div>
+            <div class="col-span">
+              <h5 class="text-4xl text-[#9e8857] font-black mb-1.5">
+                3<span class="text-2xl">+</span>
+              </h5>
+              <span class="">Tecnologies</span>
+            </div>
+            <div class="col-span">
+              <h5 class="text-4xl text-[#9e8857] font-black mb-1.5">
+                6K<span class="text-2xl">+</span>
+              </h5>
+              <span class="">Hours Worked</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>

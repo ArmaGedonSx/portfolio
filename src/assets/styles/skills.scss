@@ -9,37 +9,41 @@ app-skills{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   text-align: center;
 }
 .skills-container{
-
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-
-  width: 90%;
+  align-items: start;
+  width: 100%;
   position: relative;
   .skills-technologies{
     width: 100%;
     @include md {
-      height:fit-content;
-      max-height: 300px;
+      // height:fit-content;
+      // max-height: 300px;
     }
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
     justify-content: center;
     // justify-items: center;
     align-items: center;
-    position:relative;
-    max-height: min-content;
+    position:absolute;
+    overflow-x: scroll;
     .skills-card{
       position:relative;
       margin: 10px;
     }
 
-    margin-top: 30px;
+    // margin-top: 30px;
   }
+}
+.skills-technologies-container{
+  // width: 100%;
+  // overflow: hidden;
+  // position: relative;
 }
