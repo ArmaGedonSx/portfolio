@@ -5,4 +5,5 @@ export interface IExperienceInfo{
   startTime:string;
   endTime:string;
   implementedSkills: Array<string>;
+  expDescriptionArr: Array<string>;
 }

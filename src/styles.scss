@@ -28,9 +28,10 @@ html, body{
 
 body{
   margin: 0;
-  font-family: Poppins;
+  font-family: "Inter", sans-serif;
   background-color: $color-background;
   overflow-x: hidden;
+  position: relative;
 }
 h1,h2,h3,h4,h5{
   letter-spacing:2px;
@@ -42,12 +43,12 @@ h1,h2,h3,h4,p{
 
 }
 a{
-  color: $color-blue-light;
+  color: #9e6857d6;
   &:hover{
-    color: $color-blue;
+    color: #576d9e;
   }
   &:active{
-    color: $color-gray;
+    color: #576d9e;
   }
 }
 h1{
@@ -61,7 +62,7 @@ h2{
   font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;
-  color: $color-blue;
+  color: white;
   @include md{
     font-size: 18px;
   }
@@ -87,19 +88,19 @@ app-landing-page{
 
 button{
   border: none;
-  border-radius: 10px;
-  color: $color-blue-dark;
-  background-color: $color-blue-light;
+  border-radius: 0px;
+  color: rgba(0, 0, 0, 0.761);
+  background-color: #9e8857;
   padding-block: 7px;
-  padding-inline:10px;
+  padding-inline: 20px;
   font-family: Poppins;
   font-weight: bold;
   font-size: small;
 
   &:hover{
     cursor: pointer;
-    background-color: $color-blue-dark;
-    color: $color-white;
+    background-color: #9e6857;
+    color: rgba(255, 255, 255, 0.718);
   }
   &:active{
     // cursor:default;
@@ -109,4 +110,15 @@ button{
   @include md{
     font-size: medium;
   }
+}
+
+#home,#about,#skills{
+  border: 4px solid #9e8857;
+  border-top: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+  padding-inline: 24px;
+}
+#projects{
+  position: relative;
 }

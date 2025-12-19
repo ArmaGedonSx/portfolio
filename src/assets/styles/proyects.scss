@@ -1,45 +1,9 @@
 app-proyects{
-  display:flex;
   width: 100%;
-  justify-content: center;
   align-items: center;
-  padding-top: 60px;
-  min-height: 100svh;
-  margin-bottom: 30vh;
 
   @include md{
     height: fit-content;
     margin-bottom: 0px;
-
-  }
-}
-
-.proyects-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: fit-content;
-  margin: 10rem 0px 40rem 0px;
-  @include md{
-    margin: 5rem 0px 20rem 0px;
-  }
-
-
-  .proyects-title{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 32px;
-    text-align: center;
-  }
-  .proyects-porfolio{
-    width: 80vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
-    .proyects-card{
-      margin: 20px;
-    }
   }
 }

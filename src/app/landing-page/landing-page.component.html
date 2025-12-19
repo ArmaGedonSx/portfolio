@@ -1,21 +1,24 @@
 <!-- <app-intro-splash></app-intro-splash> -->
-<div class="container lg:max-w-[1024px] xl:max-w-[1280px] 2xl:max-w-[1536px] 3xl:max-w-[1792px] m-auto border border-1">
-  <div class="px-[24px]">
-
-    <section id="home">
-      <app-home></app-home>
-    </section>
-    <section id="about" class="about">
-      <app-about [aboutMessage]="DATA?.about"></app-about>
-    </section>
-    <section id="skills">
-      <app-skills [skills]="skills"></app-skills>
-    </section>
-    <section id="projects">
-      <app-proyects [projects]="projects"></app-proyects>
-    </section>
-    <app-particles-overlay></app-particles-overlay>
-  </div>
+<div class="container lg:max-w-[1024px] xl:max-w-[1280px] 2xl:max-w-[1536px] 3xl:max-w-[1792px] m-auto">
+  <section id="home">
+    <app-home></app-home>
+  </section>
+  <section id="about" class="about">
+    <app-about [aboutMessage]="DATA?.about"></app-about>
+  </section>
+  <section id="skills">
+    <app-skills [skills]="skills"></app-skills>
+  </section>
+  <section id="projects">
+    <app-proyects [projects]="projects"></app-proyects>
+  </section>
+  <section id="experience">
+    <app-experiences [experiences]="DATA?.experience"></app-experiences>
+  </section>
+  <section id="contact">
+    <app-contact></app-contact>
+  </section>
+  <app-particles-overlay></app-particles-overlay>
 </div>
 <!-- <section id="home">
   <app-home ></app-home>

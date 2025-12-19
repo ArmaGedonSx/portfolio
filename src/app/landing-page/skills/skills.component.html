@@ -1,10 +1,11 @@
 <div class="skills-container">
-  
-  <div class="skills-text">
-    <h2 class="text-[#9e8857] monoton-regular text-5xl">Technologies and knowledge</h2>
+  <div class="skills-text relative">
+    <h2 class="text-[#9e8857] monoton-regular text-3xl sm:text-5xl">Technologies and knowledge</h2>
+    <div class="skill-title-trace hidden sm:block absolute w-[100%] h-[55%] border-b-4 border-l-4 border-[#9e8857] bottom-[-4px] left-[-4px]"></div>
+    <div class="absolute w-[25px] h-[4px] border-b-4 border-[#9e8857] bottom-[20px] left-[-25px]"></div>
   </div>
-  <div class="skill-grid grid grid-cols-12 gap-5 ps-[32px] pt-[70px]  relative">
-    <div class="absolute h-[464px] w-[32px] border-[#9e8857] border-r-4 border-t-4 top-0 left-0"></div>
+  <div class="skill-grid grid grid-cols-12 gap-5 ps-[0px] pt-[10px]  sm:ps-[32px] sm:pt-[70px]  relative">
+    <div class="tree-separator-skill absolute h-[338px] sm:h-[464px] w-[30px] sm:w-[60px] border-[#9e8857] border-r-4 top-[-24px] sm:top-0 left-[-28px]"></div>
     <app-skill-section 
       class="skill-section col-span-12"
       [title]="'Languages'" 

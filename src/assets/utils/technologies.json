@@ -114,7 +114,17 @@
       "name": "Sass",
       "organizationUrl": "https://sass-lang.com/",
       "logoImg":"sass-logo.png"
+    },
+    "c#":{
+      "name": "C#",
+      "organizationUrl": "https://dotnet.microsoft.com/en-us/languages/csharp",
+      "logoImg":"Logo_C_sharp.svg"
+    },
+    "node":{
+      "name": "NodeJS",
+      "organizationUrl": "https://nodejs.org/en",
+      "logoImg":"node-js-icon.svg"
     }
-
+    
   }
 }

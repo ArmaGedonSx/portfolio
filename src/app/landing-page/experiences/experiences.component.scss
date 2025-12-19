@@ -2,12 +2,9 @@
 
 
 app-experience-card {
-  height: 100%;
+  height: fit-content;
   width: 100%;
-  @include md {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+}
+.line-experiences-list{
+  height: calc(100% + 120px);
 }

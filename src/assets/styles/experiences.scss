@@ -2,31 +2,35 @@
 .experiences{
 
   &-container{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    padding: 8rem 0px 8rem 0px;
+    // display: flex;
+    // justify-content: center;
+    // align-content: center;
+    // flex-direction: column;
+    // padding: 8rem 0px 8rem 0px;
     align-items: center;
 
   }
   &-title{
-    margin-bottom: 32px;
+    // margin-bottom: 32px;
     text-align: center;
   }
+  // experiences-element
   &-element {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    
+    &:nth-child(odd) {
+      justify-content: start;
+    }
+    
+    &:nth-child(even) {
+      justify-content: end;
+    }
   }
 }
 
 .experiences-list{
-  margin: 0px 3rem;
-  max-width: 60vw;
-  @include md{
-    margin: 0px;
-    max-width: unset;
-
-  }
+  // margin: 0px 3rem;
+  // max-width: 60vw;
+  
 }

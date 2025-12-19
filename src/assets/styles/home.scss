@@ -7,14 +7,20 @@ app-home{
   display: block;
   height: $viewHeight !important;
   align-content: center;
+  padding-inline: 24px;
+  @include md{
+    padding-inline: 0px;
+  }
 }
 .home-container{
   width: 100%;
 }
+// border-l-4 border-[#9e8857]
 .home-background{
   background-size:cover;
   background-position:center center;
   background-repeat:no-repeat;
+  
 }
 .home-banner{
   top: 35%;

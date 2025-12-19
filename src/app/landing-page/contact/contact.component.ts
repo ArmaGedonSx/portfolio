@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
   iconPath=environment.iconPath;
+  currentYear: number = new Date().getFullYear();
+  
   constructor() { }
 
   ngOnInit(): void {

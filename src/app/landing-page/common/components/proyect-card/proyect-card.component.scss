@@ -2,13 +2,14 @@
 
 $duration-animation: 0.7s;
 
+
 .proyect-card {
-  max-width: 300px;
-  height: 280px;
+  // max-width: 300px;
+  // height: 280px;
   display: inline-flex;
   flex-direction: column;
   justify-content: flex-end;
-  border-radius: 20px 20px 18px 18px;
+  // border-radius: 20px 20px 18px 18px;
   -webkit-box-shadow: 0px 0px 0px 2px $color-blue-dark;
   -moz-box-shadow: 0px 0px 0px 2px $color-blue-dark;
   box-shadow: 0px 0px 0px 2px $color-blue-dark;
@@ -17,7 +18,7 @@ $duration-animation: 0.7s;
     position: absolute;
     height: 280px;
     width: 300px;
-    border-radius: 20px;
+    // border-radius: 20px;
     background-color: $color-gray-light;
 
   }
@@ -25,18 +26,19 @@ $duration-animation: 0.7s;
   .proyect-information {
     position: relative;
     display: inherit;
-    height: 80px;
+    // height: 80px;
     flex-direction: inherit;
     align-items: center;
     justify-items: center;
     justify-content: center;
     width: 300px;
-    background-color: $color-blue-dark;
-    border-radius: 0px 0px 18px 18px;
-    padding-top: 10px;
+    // background-color: #576e9eb5;
+    background-color: #6e483ce8;
+    // border-radius: 0px 0px 18px 18px;
+    // padding-top: 10px;
     bottom: 0px;
     color: $color-white;
-    transition-property: bottom, height, border-radius;
+    transition-property: bottom, height;
     transition-duration: $duration-animation;
     overflow: hidden;
     .proyect-title {
@@ -46,7 +48,8 @@ $duration-animation: 0.7s;
       font-size: large;
       text-transform: uppercase;
       font-weight: bold;
-      color: $color-blue-light;
+      color: #9e8857;
+      // color: #212121;
 
     }
 
@@ -57,7 +60,7 @@ $duration-animation: 0.7s;
       overflow: hidden;
       text-overflow: ellipsis;
       font-size: small;
-      color: $color-gray-light;
+      color: #212121;
       transition-property: white-space;
       transition-duration: $duration-animation;
     }
@@ -91,10 +94,10 @@ $duration-animation: 0.7s;
 
   &:hover, &.show {
     .proyect-information {
-      background-color: rgba(3, 0, 27, 0.523);
+      background-color: #6e483c;
       justify-items: center;
       justify-content: center;
-      border-radius: 18px;
+      // border-radius: 18px;
       backdrop-filter: blur(10px);
       height: 100%;
       min-height: fit-content;
@@ -103,7 +106,7 @@ $duration-animation: 0.7s;
 
       .proyect-title {
         opacity: 100;
-        color: $color-blue-light;
+        color: #9e8857;
         // -webkit-text-stroke: 0.1px $color-white;
       }
 
@@ -113,7 +116,7 @@ $duration-animation: 0.7s;
         overflow: visible;
         overflow-wrap: break-word;
         text-overflow: initial;
-
+        color: rgba(255, 255, 255, 0.762);
       }
     }
 
@@ -123,7 +126,12 @@ $duration-animation: 0.7s;
       display: flex;
       opacity: 100;
     }
-
+    button {
+      color: rgba(255, 255, 255, 0.762);
+      &:hover{
+        background-color: #39496acf;
+      }
+    }
   }
   &after{
     .card-buttons{

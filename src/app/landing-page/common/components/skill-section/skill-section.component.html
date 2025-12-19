@@ -1,18 +1,20 @@
-<div class="relative flex">
-  <div class="tree-separator-primary border-b-4 border-[#9e8857] h-[24px]"></div>
+<div class="skill-section-container relative flex">
+  <div class="tree-separator-primary hidden md:block border-b-4 border-[#9e8857] h-[24px]"></div>
   <div class="">
     <div class="content-start relative w-fit">
-      <div class="tree-separator-title border-b-4 border-l-4 border-[#9e8857] absolute w-[150px] h-[26px] top-[24px] left-[-4px]"></div>
-      <h3 class="text-white text-5xl uppercase w-fit ms-1">{{ title }}</h3>
+      <div class=" tree-separator-title border-b-4 border-l-0 sm:border-l-4 border-[#9e8857] absolute w-[50%] sm:w-[150px] h-[26px] top-[6px] sm:top-[24px] left-[0px] sm:left-[-4px]"></div>
+      <h3 class="text-white text-2xl sm:text-5xl uppercase w-fit ms-1">{{ title }}</h3>
     </div>
-    <div class="skills-technologies-container relative flex flex-row ps-[75px] pt-[40px]">
-      <div class="tree-separator-secondary relative h-[77px] top-[-40px] border-b-4 border-l-4 border-[#9e8857]"></div>
-      <div *ngIf="technologies" class="skill-tecnologies grid grid-flow-col auto-cols-auto gap-5 border border-4 border-[#9e8857] px-5">
-        <div class="col-span-1 content-center skill-tecnologie" *ngFor="let keySkill of skills">
-          <app-skill-card [skillName]="technologies[keySkill].name"
-                          [skillSVG]="technologies[keySkill].logoImg"
-                          [urlSkill]="technologies[keySkill].organizationUrl"></app-skill-card>
-        </div>
+    <div class="skills-technologies-container relative flex flex-row ps-[10px] sm:ps-[75px] pt-[10px] sm:pt-[40px]">
+      <div class="tree-separator-secondary relative h-[40px] sm:h-[77px] top-[-14px] sm:top-[-40px] border-b-4 border-l-4 border-[#9e8857]"></div>
+      <div class="skill-tecnologies">
+          <div *ngIf="technologies && skills" class="grid grid-flow-col auto-cols-auto gap-5 border border-4 border-[#9e8857] px-5 py-2">
+            <div class="col-span-1 content-center skill-tecnologie" *ngFor="let keySkill of skills">
+              <app-skill-card [skillName]="technologies[keySkill]?.name"
+                              [skillSVG]="technologies[keySkill].logoImg"
+                              [urlSkill]="technologies[keySkill].organizationUrl"></app-skill-card>
+            </div>
+          </div>
       </div>
     </div>
   </div>

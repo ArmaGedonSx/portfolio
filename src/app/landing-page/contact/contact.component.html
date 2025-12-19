@@ -1,50 +1,52 @@
-<div class="">
-     
-</div>
-<div class="contact-container">
-  <h2>Contact Me</h2>
-  <!-- <p>&</p> -->
-  <h3 class="contact-subtitle">...and make your ideas come true</h3>
-  <div class="contact-link-list">
-    <a href="https://github.com/koinu1203"
-       target="_blank"
-       class="contact-link-list-element">
-      <img class="icon icon-github"
-           [src]="iconPath+'github-4-icon.svg'"
-           alt="">
-    </a>
-    <a href="https://www.linkedin.com/in/danielortizpary/"
-       target="_blank"
-       class="contact-link-list-element">
-      <img class="icon icon-linkedin"
-           [src]="iconPath+'linkedin-icon.svg'"
-           alt="">
-    </a>
-    <a href="https://api.whatsapp.com/send?phone=51947638171"
-       target="_blank"
-       class="contact-link-list-element">
-      <img class="icon icon-whatsapp"
-           [src]="iconPath+'whatsapp-icon.svg'"
-           alt="">
-    </a>
-    <a href="https://www.instagram.com/i.koinu/"
-       target="_blank"
-       class="contact-link-list-element">
-      <img class="icon icon-instragram"
-           [src]="iconPath+'instagram-3-icon.svg'"
-           alt="">
-    </a>
-    <a href="mailto:daniel_ortizpary@hotmail.com"
-       target="_blank"
-       class="contact-link-list-element">
-      <img class="icon icon-correo"
-           [src]="iconPath+'correo-icon.svg'"
-           alt="">
-    </a>
-  </div>
-  <span class="contact-footer">Portfolio created by Daniel Ortiz Pary, check the code <a
-       href="https://github.com/koinu1203/portfolio"
-       target="_blank">here</a></span>
-</div>
+<div class="relative">
+     <div class="">
+          <div class="absolute h-full w-[0px] border-r-4 border-[#9e8857] left-1/2 -translate-x-1/2 z-10"></div>
+          <p class="absolute z-10 top-[60vh] left-[calc(43vw+2rem)] text-white/70 text-xl font-light tracking-widest" 
+             style="writing-mode: vertical-rl; text-orientation: mixed;">
+               Your <span class="text-white">idea</span> doesn't need to be <span class="text-white">perfect</span>
+          </p>
+          <p class="absolute z-10 top-[100vh] right-[calc(43vw+2rem)] text-white/70 text-xl font-light tracking-widest" 
+             style="writing-mode: vertical-lr; text-orientation: mixed;">
+               It needs to be <span class="text-white">real</span>
+          </p>
+     </div>
+     <div
+          class="relative w-svw h-[190vh] left-1/2 -translate-x-1/2 top-0 z-1 bg-gradient-to-b from-transparent via-black/50 to-black">
+     </div>
+     <div class="py-5 content-center relative w-svw h-fit left-1/2 -translate-x-1/2 bottom-0 z-10 bg-black flex flex-col justify-start items-center">
+          <h2 class="monoton-regular text-[#9e8857] text-5xl py-5">Contact Me</h2>
+          <div class="">
+               <a href="https://github.com/koinu1203" target="_blank" class="contact-link-list-element">
+                    <img class="icon icon-github" [src]="iconPath+'github-4-icon.svg'" alt="">
+               </a>
+               <a href="https://www.linkedin.com/in/danielortizpary/" target="_blank"
+                    class="contact-link-list-element">
+                    <img class="icon icon-linkedin" [src]="iconPath+'linkedin-icon.svg'" alt="">
+               </a>
+               <a href="https://api.whatsapp.com/send?phone=51947638171" target="_blank"
+                    class="contact-link-list-element">
+                    <img class="icon icon-whatsapp" [src]="iconPath+'whatsapp-icon.svg'" alt="">
+               </a>
+               <a href="https://www.instagram.com/i.koinu/" target="_blank" class="contact-link-list-element">
+                    <img class="icon icon-instragram" [src]="iconPath+'instagram-3-icon.svg'" alt="">
+               </a>
+               <a href="mailto:daniel_ortizpary@hotmail.com" target="_blank" class="contact-link-list-element">
+                    <img class="icon icon-correo" [src]="iconPath+'correo-icon.svg'" alt="">
+               </a>
+          </div>
 
-<!-- https://api.whatsapp.com/send?phone=51947638171 -->
+     </div>
+     <div class="relative w-svw h-[40vh] left-1/2 -translate-x-1/2 bottom-0 z-10 bg-black flex flex-col justify-start items-center">
+          <div class="relative h-[70%] w-fit border-l-4 border-[#9e8857] flex justify-end items-end">
+          </div>
+          <div class="relative p-2 px-3">
+               <div class="absolute h-[35%] w-[75%] border-t-4 border-l-4 border-[#9e8857] top-0 left-0"></div>
+               <span class="contact-footer text-white/70">
+                    <!-- <a href="https://github.com/koinu1203/portfolio" target="_blank" class="">Portfolio</a>
+                     created by   -->
+                     Copyright © {{ currentYear }} <span class="monoton-regular text-[#9e8857]">Daniel Ortiz</span>. All rights reserved.
+               </span>
+               <div class="absolute h-[55%] w-[75%] border-b-4 border-r-4 border-[#9e8857] bottom-0 right-0"></div>
+          </div>
+     </div>
+</div>

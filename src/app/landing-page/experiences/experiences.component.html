@@ -1,15 +1,27 @@
-<div class="experiences-container">
-  <div class="experiences-title">
-    <h2>Experience</h2>
-    <h3>Where I have worked</h3>
+<div class="experiences-container h-full relative">
+  <div class="relative w-[4px] h-[75vh] border-l-4 border-[#9e8857] left-1/2 -translate-x-1/2 top-0"></div>
+  <div class="experiences-title w-fit relative justify-self-center mb-[120px] mx-auto">
+    <h3 class="monoton-regular text-3xl sm:text-5xl p-2">Experience</h3>
+    <div class="absolute w-[90%] h-[35%] border-l-4 border-b-4 border-[#9e8857] left-0 bottom-0"></div>
+    <div class="absolute w-[85%] h-[45%]  border-t-4 border-r-4 border-[#9e8857] right-0 top-0"></div>
   </div>
-  <div class="experiences-list">
-    <div class="row">
-      <div class="experiences-element col-12 col-md-6 col-lg-6 col-xl-6 py-3"
-      *ngFor="let experience of experiences">
-        <app-experience-card [technologies]="technologies" [experience]="experience"></app-experience-card>
+  <div class="experiences-list relative">
+    <div class="line-experiences-list absolute w-[0px] border-r-2 border-l-2 border-[#9e8857] left-1/2 -translate-x-1/2 top-[-120px]"></div>
+    <div class="grid grid-cols-1 gap-[50px] xl:gap-[100px]">
+      <div class="experiences-element"
+           [ngClass]="{
+              'col-span-1': true,
+             'justify-end': i % 2 === 0,
+             'justify-start': i % 2 !== 0
+           }"
+           *ngFor="let experience of experiences; let i = index">
+        <app-experience-card 
+          class="max-w-[50%]" 
+          [technologies]="technologies" 
+          [experience]="experience"
+          [imageOnRight]="i % 2 === 0"></app-experience-card>
       </div>
     </div>
   </div>
-
+<!-- 5730270 -->
 </div>

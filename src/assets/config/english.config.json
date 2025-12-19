@@ -12,17 +12,20 @@
   "skills": {
     "languajes": [
       "javascript",
+      "typescript",
       "python",
-      "php"
+      "php",
+      "c#"
     ],
     "frameworks": [
-      "django",
       "vue",
-      "angular"
+      "angular",
+      "react",
+      "django",
+      "node"      
     ],
     "tools": [
       "photoshop",
-      "typescript",
       "linux",
       "bootstrap",
       "sass"
@@ -37,13 +40,6 @@
       "previewImg": "E-GO.jpg"
     },
     {
-      "projectName": "Poke List",
-      "projectURL": "https://app-pokelist.web.app/#/",
-      "githubRepository": "https://github.com/koinu1203/PokeList",
-      "description": "Poke List is an app created for the search and visualization of the different pokemos present in the PokeAPI",
-      "previewImg": "Poke-List.jpg"
-    },
-    {
       "projectName": "Portal 2 Enviroment",
       "projectURL": "https://portal2eviromentproyect.web.app/",
       "githubRepository": "https://github.com/koinu1203/Portal2Enviroment-ProyectCGV-",
@@ -56,6 +52,13 @@
       "projectURL": "https://koinu1203.github.io/GenReports-Tkambio-front/",
       "description": "This is the layout of a responsive graphic interface for the digital exchange house Tkambio",
       "previewImg": "GenReports-Tkambio.jpg"
+    },
+    {
+      "projectName": "Poke List",
+      "projectURL": "https://app-pokelist.web.app/#/",
+      "githubRepository": "https://github.com/koinu1203/PokeList",
+      "description": "Poke List is an app created for the search and visualization of the different pokemos present in the PokeAPI",
+      "previewImg": "Poke-List.jpg"
     },
     {
       "projectName": "Airline Proyect",
@@ -75,7 +78,12 @@
       "company": "NTTDATA - Interbank group",
       "companyIcon": "/assets/img/nttdata-logo.jpg",
       "charge": "Front End Development",
-      "expDescription": "Participant of the Janus project, a mortgage application from Interbank, as a junior developer",
+      "expDescription": "Great attention to detail and a very good team member.",
+      "expDescriptionArr":[
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere nisi turpis",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere nisi turpis",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere nisi turpis"
+      ],
       "startTime": "02-2022",
       "endTime": "07-2022",
       "implementedSkills": [
@@ -92,7 +100,12 @@
       "company": "Roblex",
       "companyIcon": "/assets/img/roblex-logo.jpg",
       "charge": "Front End Support",
-      "expDescription": "I was in charge of setting up a new flow for operations in the web application and several visual improvements to the main page",
+      "expDescription": "It was a great help in improving the views of our service page, great job!",
+      "expDescriptionArr":[
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere nisi turpis",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere nisi turpis",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere nisi turpis"
+      ],
       "startTime": "08-2022",
       "endTime": "12-2022",
       "implementedSkills": [
@@ -106,7 +119,12 @@
       "company": "Tkambio",
       "companyIcon": "/assets/img/tkambio_icon.jpg",
       "charge": "Front End Development",
-      "expDescription": "I was in charge of remodeling the main page dedicated to the expansion to Mexico and the USA.",
+      "expDescription": "Daniel was very proactive with the design of our new website",
+      "expDescriptionArr":[
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere nisi turpis",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere nisi turpis",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere nisi turpis"
+      ],
       "startTime": "01-2023",
       "endTime": "06-2023",
       "implementedSkills": [
@@ -119,10 +137,15 @@
     {
       "company": "Bulwark Pest Control",
       "companyIcon": "/assets/img/bulwark_pest_control_logo.jpg",
+      "expDescriptionArr":[
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere nisi turpis",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere nisi turpis",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere nisi turpis"
+      ],
       "charge": "Front End Development",
-      "expDescription": "I'm responsible for the front-end area of ​​Tempest's website, a digital sales portal. I refactor and improve various components and handle new features at the client's request.",
+      "expDescription": "Daniel was a dedicated and hard worker for a very long time and I appreciate the work he did for me!",
       "startTime": "06-2023",
-      "endTime": "2025",
+      "endTime": "12-2025",
       "implementedSkills": [
         "vue",
         "linux",
