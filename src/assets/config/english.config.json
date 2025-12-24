@@ -8,11 +8,14 @@
     "experience": "Experience",
     "contact": "Contact Me"
   },
-  "about": "Hi, my name is <span class=\"color-white\">Daniel Ortiz</span>, and I'm a web developer. I specialize in the main <span class=\"color-white\">Front End</span> development frameworks, such as <span class=\"color-white\">Angular</span> and <span class=\"color-white\">Vue</span>, although I also have basic knowledge of back-end frameworks such as Symphony and Django. I studied <span class=\"color-white\">Computer Systems Engineering</span> at the Universidad Privada del Norte (UPN). I'm self-taught, proactive, and easily adaptable to any project. My hobby is traveling the world and experiencing new cultures.",
+  "about": "Hi, my name is <strong class=\"high-light\">Daniel Ortiz</strong>, and I'm a web developer. I specialize in the main  <strong class=\"high-light\">Front End</strong> development frameworks, such as <span class=\"color-white\">Angular</span> and <span class=\"color-white\">Vue</span>, although I also have basic knowledge of back-end frameworks such as Symphony and Django. I studied <span class=\"color-white\">Computer Systems Engineering</span> at the Universidad Privada del Norte (UPN). I'm self-taught, proactive, and easily adaptable to any project. My hobby is traveling the world and experiencing new cultures.",
   "skills": {
     "languajes": [
+      "html",
+      "css",
       "javascript",
       "typescript",
+      "sass",
       "python",
       "php",
       "c#"
@@ -22,13 +25,21 @@
       "angular",
       "react",
       "django",
-      "node"      
+      "node",
+      "nuxt",
+      "stenciljs"    
     ],
     "tools": [
       "photoshop",
-      "linux",
       "bootstrap",
-      "sass"
+      
+      "docker",
+      "gsap",
+      "jest",
+      "postman",
+      "swagger",
+      "figma",
+      "ubuntu"
     ]
   },
   "projects": [
@@ -75,7 +86,7 @@
   ],
   "experience": [
     {
-      "company": "NTTDATA - Interbank group",
+      "company": "NTTDATA",
       "companyIcon": "/assets/img/nttdata-logo.jpg",
       "charge": "Front End Development",
       "expDescription": "Great attention to detail and a very good team member.",

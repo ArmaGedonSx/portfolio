@@ -16,9 +16,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   titleRoulete:Array<string> = [
     'Daniel!',
     'FrontEnd!',
+    'Daniel!',
     'BackEnd!',
+    'Daniel!',
+    'FullStack!',
+    'Daniel!',
     'Koinu!',
-    'Developer!',
   ]; 
   
   constructor() { 
@@ -29,10 +32,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
     if(this.isMobile()) {
       this.titleRoulete = [
         'Daniel!',
+        'FrontEnd!',
+        'Daniel!',
+        'BackEnd!',
+        'Daniel!',
+        'FullStack!',
+        'Daniel!',
         'Koinu!',
-        'Front End!',
-        'Back End!',
-        'Developer!',
       ];
     }
     this.cicleTitle();

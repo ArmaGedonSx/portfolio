@@ -1,27 +1,27 @@
 <div [ngClass]="{'experience-card-container w-full relative inline-grid justify-items-center':true, 'test':!imageOnRight}" *ngIf="experience && technologies">
   <!-- <div [ngClass]="{'absolute w-[20%]  border-[#9e8857] ':true, 'border-r-4 left-0 custom-img-on-right border-t-4 top-[40px]':!imageOnRight, 'top-0 right-0 h-[40px] border-b-4':imageOnRight}"></div> -->
-  <div class="absolute size-[80px]"
+  <div class="md:absolute size-[80px]"
        [ngClass]="{'right-[-40px]': imageOnRight, 'left-[-40px]': !imageOnRight, 'top-[10px]':true}">
     <div class="border-[#9e8857] w-fit h-fit border-4 rounded-full shadow-inner shadow-white/50 shadow-md shadow-[#9e8857]/50">
       <img [src]="experience.companyIcon" class="rounded-full" [alt]="experience.companyIcon">
     </div>
   </div>
-  <div class="absolute"
+  <div class="py-2 md:absolute"
        [ngClass]="{'top-[40px]':true,'right-[-240px]': imageOnRight, 'left-[-240px]': !imageOnRight}">
-    <span class="experience-card-subtitle text-[#9e6857]/80 font-black">{{formatDate(experience.startTime)}} - {{formatDate(experience.endTime)}}</span>
+    <span class="experience-card-subtitle text-[#9e6857]/80 font-black bg-[#212121]">{{formatDate(experience.startTime)}} - {{formatDate(experience.endTime)}}</span>
   </div>
 
   <div class=" relative max-w-[80%]">
     <div [ngClass]="{'absolute  border-[#9e8857] border-b-4 w-[60%] h-[60%] bottom-0 border-l-4 ':true, 'left-0':!imageOnRight, 'h-[50%]':imageOnRight}"></div>
     <div class="experience-card-header relative">
-      <div class="experience-card-title  flex">
-        <h4 class="experience-card-company-name pt-[8px] px-[12px] text-[#576d9e]/70 uppercase font-bold text-nowrap">{{experience.company}}</h4>
+      <div class="experience-card-title  bg-[#212121] flex">
+        <h4 class="experience-card-company-name pt-[8px] px-[12px] text-[#576d9e]/70 uppercase font-bold text-nowrap bg-[#212121]">{{experience.company}}</h4>
         <div class="w-full relative h-[1px]">
           <div [ngClass]="{'absolute w-full border-[#9e8857] border-t-4 border-r-4 top-[20px] h-[50px]':true}"></div>
         </div>
       </div>
     </div>
-    <div class="experience-card-body pb-[18px] px-[24px]">
+    <div class="experience-card-body pb-[18px] px-[24px] bg-[#212121]">
       <p class="experience-card-description text-white/70 text-justify italic">"{{experience.expDescription}}"</p>
     </div>
   </div>

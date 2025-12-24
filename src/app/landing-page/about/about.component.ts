@@ -36,7 +36,7 @@ export class AboutComponent implements OnInit, OnDestroy {
         start: 'top 80%',
         end: 'top 20%',
         scrub: 1,
-        markers: true
+        markers: false
       }
       
     })

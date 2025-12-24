@@ -1,39 +1,41 @@
-<div class="relative border-t-4 border-r-4 border-[#9e8857] w-[84%] h-[20rem] top-0 left-0"></div>
-<div class="proyects-container relative">
-  <div class="proyects-title relative right-0 w-fit ms-auto">
-    <h3 class="monoton-regular text-3xl sm:text-5xl p-2">Some Projects</h3>
-    <div class="absolute w-full h-[60%] border-s-4 border-b-4 border-[#9e8857] bottom-0"></div>
-    <div class="absolute w-[200px] h-full border-t-4 border-[#9e8857] left-[160px] top-0"></div>
+<!-- <div class="w-[20rem] relative">
+  <div class="relative border-t-4 border-r-4 border-[#9e8857] w-[2rem] h-[20rem] top-0 right-0 "></div>
+</div> -->
+<div id="proyects-container" class="proyects-container px-2 relative">
+  <div class="proyects-title relative right-0 w-fit">
+    <h3 id="proyects-title" class="monoton-regular text-2xl sm:text-5xl p-2 bg-[#9e6857]/10">Some Projects</h3>
+    <div id="proyects-border-1" class="absolute w-full h-[100%] border-l-4 border-r-4 border-t-4 border-[#9e8857] bottom-0"></div>
+    <!-- <div class="absolute w-[200px] h-full border-t-4 border-[#9e8857] left-[160px] top-0"></div> -->
   </div>
   <div class="proyects-porfolio relative">
     <!-- <div class="absolute w-full h-[10%] border-l-4 border-[#9e8857] left-0 bottom-0"></div> -->
     <!-- <div class="absolute size-[32px] border-4 border-[#9e8857] left-0 bottom-[10%]"></div> -->
     <!-- <div class="absolute size-[32px] border-r-4 border-b-4 border-[#9e8857] left-[8px] bottom-[9%]"></div> -->
-    <div class="swiper projects-swiper border-r-4 border-b-4 border-[#9e8857] ">
+    <div id="proyects-swiper" class="swiper projects-swiper border-4 border-double border-[#9e8857] ">
       <!-- Fondo parallax opcional -->
       <div class="parallax-bg" data-swiper-parallax="-23%"></div>
       
       <div class="swiper-wrapper">
-        <div class="swiper-slide" *ngFor="let project of projects">
+        <div class="swiper-slide" [id]="'proyect-slide-' + i" *ngFor="let project of projects; let i = index">
           <!-- Imagen de fondo del proyecto con parallax -->
-          <div class="slide-bg" 
+          <div [id]="'proyect-slide-bg-' + i" class="slide-bg" 
                [style.background-image]="'url(/assets/img/' + project.previewImg + ')'" 
                data-swiper-parallax="-23%"></div>
           
           <!-- Overlay oscuro para mejorar legibilidad -->
-          <div class="slide-overlay" data-swiper-parallax="-15%"></div>
+          <div [id]="'proyect-slide-overlay-' + i" class="slide-overlay" data-swiper-parallax="-15%"></div>
           
           <!-- Contenido del proyecto -->
-          <div class="slide-content content-end" 
+          <div [id]="'proyect-slide-content-' + i" class="slide-content content-end" 
                data-swiper-parallax="-300" 
                data-swiper-parallax-opacity="0">
             <app-proyect-card [dataProject]="project" [hideImage]="true"></app-proyect-card>
           </div>
         </div>
       </div>
-      <div class="swiper-pagination !bottom-[-40px]"></div>
-      <div class="swiper-button-prev !text-[#9e8857] after:!text-3xl !left-0"></div>
-      <div class="swiper-button-next !text-[#9e8857] after:!text-3xl !right-0"></div>
+      <div class="swiper-pagination hidden !bottom-[-40px]"></div>
+      <div class="swiper-button-prev !hidden !md:flex !text-[#9e8857] after:!text-3xl !left-0"></div>
+      <div class="swiper-button-next !hidden !md:flex !text-[#9e8857] after:!text-3xl !right-0"></div>
     </div>
     <!-- <div class="relative w-full h-full border-r-4 border-b-4 border-[#9e8857] left-0"></div> -->
   </div>

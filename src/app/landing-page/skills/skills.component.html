@@ -1,28 +1,43 @@
-<div class="skills-container">
+<div class="skills-container relative">
+  <div id="skills-border-1" class="relative h-[10vh] md:h-[100vh] border-l-4 border-[#9e8857] left-[-24px]"></div>
   <div class="skills-text relative">
-    <h2 class="text-[#9e8857] monoton-regular text-3xl sm:text-5xl">Technologies and knowledge</h2>
-    <div class="skill-title-trace hidden sm:block absolute w-[100%] h-[55%] border-b-4 border-l-4 border-[#9e8857] bottom-[-4px] left-[-4px]"></div>
-    <div class="absolute w-[25px] h-[4px] border-b-4 border-[#9e8857] bottom-[20px] left-[-25px]"></div>
+    <h2 id="skills-title" class="text-[#9e8857] monoton-regular text-2xl md:text-5xl md:text-nowrap">Technologies and knowledge</h2>
+    <div id="skills-border-2" class="skill-title-trace hidden sm:block absolute w-[100%] h-[100%] md:h-[55%] border-b-4 border-l-4 border-[#9e8857] bottom-[-4px] left-[-4px]"></div>
+    <div id="skills-border-3" class="skill-title-trace-two absolute h-[100%] w-[24px] border-l-4 border-b-4 border-[#9e8857] bottom-[20px] left-[-24px]"></div>
   </div>
   <div class="skill-grid grid grid-cols-12 gap-5 ps-[0px] pt-[10px]  sm:ps-[32px] sm:pt-[70px]  relative">
-    <div class="tree-separator-skill absolute h-[338px] sm:h-[464px] w-[30px] sm:w-[60px] border-[#9e8857] border-r-4 top-[-24px] sm:top-0 left-[-28px]"></div>
+    <div id="skills-border-4" class="tree-separator-skill absolute h-[110%] md:h-[100%] w-[30px] sm:w-[60px] border-[#9e8857] border-r-4 top-[-24px] sm:top-0 left-[-28px]"></div>
     <app-skill-section 
+      id="skill-section-0"
       class="skill-section col-span-12"
+      [sectionIndex]="0"
       [title]="'Languages'" 
       [skills]="skills.languajes" 
-      [technologies]="technologies">
+      [technologies]="technologies"
+      (sectionLoaded)="onSectionLoaded($event)">
     </app-skill-section>
     <app-skill-section 
+      id="skill-section-1"
       class="skill-section col-span-12"
+      [sectionIndex]="1"
       [title]="'Frameworks'" 
       [skills]="skills.frameworks" 
-      [technologies]="technologies">
+      [technologies]="technologies"
+      (sectionLoaded)="onSectionLoaded($event)">
     </app-skill-section>
     <app-skill-section 
+      id="skill-section-2"
       class="skill-section col-span-12"
+      [sectionIndex]="2"
       [title]="'Tools'" 
       [skills]="skills.tools" 
-      [technologies]="technologies">
+      [technologies]="technologies"
+      (sectionLoaded)="onSectionLoaded($event)">
     </app-skill-section>
   </div>
+  <div id="skills-border-5" class="relative h-[20vh] md:h-[60vh] border-[#9e8857] md:ps-[28px] left-[-2px] md:left-0 border-r-4"></div>
+  <!-- <div class="size-[250px] border-[#9e8857] ms-[28px] border-t-4 border-r-4"></div> -->
+  <!-- <div class="size-[250px] border-double border-[#9e8857] ms-[324px] border-t-4 border-r-4"></div> -->
+  <!-- <div class="size-[254px] border-dotted border-[#9e8857] ms-[620px] border-t-4 border-r-4"></div> -->
+  <!-- <div class="size-[250px] border-[#9e8857] border-dashed ms-[920px] border-t-4 border-r-4"></div> -->
 </div>

@@ -112,11 +112,14 @@ button{
   }
 }
 
-#home,#about,#skills{
+#home,#about{
   border: 4px solid #9e8857;
   border-top: 0px;
   border-right: 0px;
   border-bottom: 0px;
+  padding-inline: 24px;
+}
+#skills{
   padding-inline: 24px;
 }
 #projects{
