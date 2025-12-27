@@ -31,7 +31,7 @@
     // opacity: 1;
     // min-height: 600px;
     height: 60vh;
-    @include md{
+    @include lg{
         height: 40vh;
     }
     overflow: hidden;

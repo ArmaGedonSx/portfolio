@@ -59,9 +59,10 @@
     },
     {
       "projectName": "Porfolio 2022",
-      "githubRepository": "https://github.com/koinu1203/backend_App_Adopcion",
-      "description": "A small API created with Php for the consumption and manipulation of data in an animal shelter",
-      "previewImg": "phpCoding.jpg"
+      "githubRepository": "https://github.com/DanielRamiroOrtizPary/portfolio2022v3",
+      "projectURL": "https://danielortizpary2022v3.web.app/",
+      "description": "Portfolio of the year 2022",
+      "previewImg": "porfolio2022v3.png"
     },
     {
       "projectName": "Report Generator Page",

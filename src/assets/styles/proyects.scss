@@ -2,7 +2,7 @@ app-proyects{
   width: 100%;
   align-items: center;
 
-  @include md{
+  @include lg{
     height: fit-content;
     margin-bottom: 0px;
   }

@@ -1,3 +1,6 @@
+
+@import '/src/assets/styles/media.scss';
+
 .intro-splash {
   position: fixed;
   top: 0;
@@ -39,6 +42,9 @@
 .intro-name {
   display: relative;
   font-size: clamp(3rem, 8vw, 6rem);
+  @include lg{
+    font-size: 1.8rem;
+  }
   font-weight: 800;
   margin: 0;
   display: flex;
@@ -60,6 +66,9 @@
 
 .intro-subtitle {
   font-size: clamp(1rem, 2vw, 1.5rem);
+  @include lg{
+    font-size: .8rem;
+  }
   font-weight: 300;
   margin-top: 1rem;
   letter-spacing: 0.2em;

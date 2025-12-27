@@ -40,7 +40,7 @@
 .home-banner-subtitle{
     color: $color-red;
     font-size: x-large;
-    @include md{
+    @include lg{
     font-size: small;
     }
     text-align: center;

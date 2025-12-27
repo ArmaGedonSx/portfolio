@@ -33,7 +33,7 @@
 }
 .tree-separator-skill{
     height: calc(100%);
-    @include md{
+    @include lg{
         height: calc(100% + 25px);
     }
 }

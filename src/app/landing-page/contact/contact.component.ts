@@ -62,7 +62,6 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
       {
         scaleY: 1,
         ease: 'none',
-        start:"",
         scrollTrigger: {
           trigger: '#contact-gradient',
           start: 'top center',
@@ -146,7 +145,7 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
         scrollTrigger: {
           trigger: '#contact-footer-line',
           start: 'top 80%',
-          end: 'bottom 65%',
+          end: 'bottom 72%',
           scrub: 1,
           markers: false
         }

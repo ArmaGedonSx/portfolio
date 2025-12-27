@@ -5,7 +5,7 @@
     </div>
     <div class="intro-content">
         <h1 class="intro-name">
-            <span *ngFor="let letter of titleLetters; let i = index" class="monoton-regular">
+            <span *ngFor="let letter of titleLetters; let i = index" class="monoton-regular ">
                 <span [ngClass]="{'intro-text':true,'intro-text-up':i%2!=0, 'intro-text-down':i%2==0}" *ngIf="letter !== ' '">{{ letter }}</span>
                 <span class="intro-text monoton-regular" *ngIf="letter === ' '">&nbsp;</span>
             </span>

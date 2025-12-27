@@ -17,10 +17,10 @@
   // experiences-element
   &-element {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     
     &:nth-child(odd) {
-      justify-content: start;
+      justify-content: flex-start;
     }
     
     &:nth-child(even) {

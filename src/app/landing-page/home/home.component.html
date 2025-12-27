@@ -1,42 +1,44 @@
 <div class="home-background" alt="keyboard background">
   <section class="home-container">
     <div class="grid grid-cols-12 gap-4">
-      <div class="col-span-12 md:col-span-9 grid grid-cols-12 gap-4">
+      <div class="col-span-12 lg:col-span-9 grid grid-cols-12 gap-4">
         <p class="col-span-12 home-banner-title flex items-start justify-start inter-500 flex flex-col">
-          <span class="text-white/80 block items-start text-xl md:text-4xl">
+          <span class="text-white/80 block items-start text-xl lg:text-4xl">
             Hi, I'm&nbsp;
           </span>
-          <span class="flex items-center justify-start ms-4 md:ms-4">
-            <span [ngClass]="{ 'text-4xl md:text-6xl md:text-6xl monoton-regular':true}">{{title}}</span>
-            <span class="home-banner-title-selector text-5xl md:text-6xl md:text-7xl ms-1" *ngIf="true">&nbsp;</span>
+          <span class="flex items-center justify-start ms-4 lg:ms-4">
+            <span [ngClass]="{ 'text-4xl lg:text-6xl lg:text-6xl monoton-regular':true}">{{title}}</span>
+            <span class="home-banner-title-selector text-5xl lg:text-6xl lg:text-7xl ms-1" *ngIf="true">&nbsp;</span>
           </span>
         </p>
         <p
-          class="home-subtitle col-span-12 md:col-span-8 text-white/80 font-light text-white/60 text-sm leading-[1.4rem] md:leading-[1.75rem] md:text-xl">
+          class="home-subtitle col-span-12 lg:col-span-8 text-white/80 font-light text-white/60 text-sm leading-[1.4rem] lg:leading-[1.75rem] lg:text-xl">
           Hi! I'm <strong class="text-white">Daniel Ortiz</strong>. A <strong class="text-white">Web Developer</strong> with 4 years of experience specializing in building high-performance, scalable web solutions. I focus on delivering efficient software and exceptional user experiences.
         </p>
         <div class="col-span-12">
-          <button type="button"
-            class=" px-8 rounded-none inter-800 uppercase text-[#212121] hover:text-white/70 text-md md:text-xl bg-[#9e8857] hover:bg-[#9e6857] ">Hire&nbsp;Me</button>
+          <a class="relative z-20" href="https://www.upwork.com/freelancers/~01d7efdbda5fa02a63?mp_source=share" target="_blank">
+            <button type="button"
+              class=" px-8 rounded-none inter-800 uppercase text-[#212121] hover:text-white/70 text-md lg:text-xl bg-[#9e8857] hover:bg-[#9e6857] ">Hire&nbsp;Me</button>
+          </a>
         </div>
       </div>
-      <div class="col-span-12 md:col-span-3">
-        <div class="absolute bottom-[10%] md:right-[4%] w-full">
-          <div class="grid grid-cols-3 md:grid-cols-1 gap-8 text-white/80 inter-300 text-center md:text-right ">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="absolute bottom-[10%] lg:right-[4%] w-full">
+          <div class="grid grid-cols-3 lg:grid-cols-1 gap-8 text-white/80 inter-300 text-center lg:text-right ">
             <div class="col-span">
-              <h5 class="text-3xl md:text-4xl text-[#9e8857] font-black mb-1.5">
+              <h5 class="text-3xl lg:text-4xl text-[#9e8857] font-black mb-1.5">
                 4<span class="text-2xl">+</span>
               </h5>
               <span class="">Years of Experience</span>
             </div>
             <div class="col-span">
-              <h5 class="text-3xl md:text-4xl text-[#9e8857] font-black mb-1.5">
+              <h5 class="text-3xl lg:text-4xl text-[#9e8857] font-black mb-1.5">
                 7<span class="text-2xl">+</span>
               </h5>
               <span class="">Projects worked on</span>
             </div>
             <div class="col-span">
-              <h5 class="text-3xl md:text-4xl text-[#9e8857] font-black mb-1.5">
+              <h5 class="text-3xl lg:text-4xl text-[#9e8857] font-black mb-1.5">
                 6K<span class="text-2xl">+</span>
               </h5>
               <span class="">Hours Worked</span>
@@ -45,4 +47,15 @@
         </div>
       </div>
     </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-indicator-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5V19M12 19L6 13M12 19L18 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="scroll-indicator-text">Scroll Down</span>
+    </div>
   </section>
+</div>

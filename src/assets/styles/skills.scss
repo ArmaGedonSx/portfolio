@@ -9,12 +9,12 @@ app-skills{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   text-align: center;
 }
 .skill-title-trace-two{
   height: calc(50% + 4px);
-  @include md{
+  @include lg{
     height: calc(100% + 4px);
 
   }
@@ -24,12 +24,12 @@ app-skills{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   width: 100%;
   position: relative;
   .skills-technologies{
     width: 100%;
-    @include md {
+    @include lg {
       // height:fit-content;
       // max-height: 300px;
     }
@@ -47,9 +47,4 @@ app-skills{
     }
 
   }
-}
-.skills-technologies-container{
-  // width: 100%;
-  // overflow: hidden;
-  // position: relative;
 }

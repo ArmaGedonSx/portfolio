@@ -20,7 +20,6 @@
 }
 
 html, body{
-  scroll-behavior: smooth;
   overflow-x: hidden;
   overflow-y: auto;
 
@@ -54,7 +53,7 @@ a{
 h1{
   font-weight: bolder;
   font-size: 4em;
-  @include md{
+  @include lg{
     font-size: 2em;
   }
 }
@@ -63,20 +62,20 @@ h2{
   font-weight: bold;
   text-transform: uppercase;
   color: white;
-  @include md{
+  @include lg{
     font-size: 18px;
   }
 }
 h3{
   font-size: 36px;
   font-weight: bold;
-  @include md{
+  @include lg{
     font-size: 24px;
   }
 }
 h4{
   font-size:large;
-  @include md{
+  @include lg{
     font-size: medium;
   }
 }
@@ -107,7 +106,7 @@ button{
     color: $color-gray;
     background-color: $color-blue-dark;
   }
-  @include md{
+  @include lg{
     font-size: medium;
   }
 }

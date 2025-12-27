@@ -135,22 +135,6 @@ export class SkillsComponent implements OnInit, OnDestroy, AfterViewInit {
       },
       '>'
     );
-    this.masterTimeline.fromTo(
-      '#skills-border-5',
-      { scaleY: 0, transformOrigin: 'top center' },
-      {
-        scaleY: 1,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '#skills-border-5',
-          start: 'top 57%',
-          end: 'top 20%',
-          scrub: 1,
-          markers: false
-        }
-      },
-      '>'
-    );
 
     // 6-8. Animaciones de cada sección COMPLETA (Languages, Frameworks, Tools)
     for (let i = 0; i < this.totalSections; i++) {

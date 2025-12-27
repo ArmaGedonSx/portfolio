@@ -5,7 +5,7 @@
   padding-block:20vh;
   background-color: transparent;
   text-align: center;
-  @include md{
+  @include lg{
     padding-inline: 20px;
   }
 }
