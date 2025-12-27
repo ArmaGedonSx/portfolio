@@ -31,3 +31,9 @@
     }
     
 }
+.tree-separator-skill{
+    height: calc(100%);
+    @include md{
+        height: calc(100% + 25px);
+    }
+}

@@ -76,38 +76,14 @@ export class ExperiencesComponent implements OnInit, AfterViewInit, OnDestroy {
         scrollTrigger: {
           trigger: '#experiences-border-top',
           start: 'top 70%',
-          end: '80% top',
-          scrub: true,
+          end: 'bottom 40%',
+          scrub: 1,
           markers: false
         }
       }
     );
-
-    // 2. Animación del borde inferior izquierdo del título
-    this.masterTimeline.fromTo(
-      '#experiences-border-1',
-      { scaleX: 0, transformOrigin: 'left center' },
-      { scaleX: 1, duration: duration * 0.8 },
-      '>-0.3'
-    );
-
-    // 3. Animación del borde superior derecho del título
-    this.masterTimeline.fromTo(
-      '#experiences-border-2',
-      { scaleX: 0, transformOrigin: 'right center' },
-      { scaleX: 1, duration: duration * 0.8 },
-      '<'
-    );
-
-    // 4. Fade in del título con efecto typed
-    this.masterTimeline.fromTo(
-      '#experiences-title',
-      { opacity: 0 },
-      { opacity: 1, duration: duration * 0.5 },
-      '>-0.2'
-    );
-
     // 5. Animación de la línea central vertical
+    // Usar el grid como referencia para el trigger ya que tiene altura real
     this.masterTimeline.fromTo(
       '.line-experiences-list',
       { scaleY: 0, transformOrigin: 'top center' },
@@ -115,14 +91,60 @@ export class ExperiencesComponent implements OnInit, AfterViewInit, OnDestroy {
         scaleY: 1,
         ease: 'none',
         scrollTrigger: {
-          trigger: '.line-experiences-list',
+          trigger: '.experiences-list-grid', // Usar el grid como trigger
           start: 'top 70%',
-          end: '80% top',
-          scrub: true,
+          end: 'bottom 20%',
+          scrub: 1,
           markers: false
         }
       },
-      '>-0.3'
+    );
+
+    // 2. Animación del borde inferior izquierdo del título
+    
+
+    // 3. Animación del borde superior derecho del título
+    this.masterTimeline.fromTo(
+      '#experiences-border-2',
+      { scaleX: 0, transformOrigin: 'right center' },
+      { scaleX: 1, duration: duration * 0.8,
+        scrollTrigger: {
+          trigger: '#experiences-border-2',
+          start: 'top 60%',
+          end: 'top 55%',
+          scrub: 1,
+          markers: false
+        } 
+        
+      },
+    );
+
+    this.masterTimeline.fromTo(
+      '#experiences-border-1',
+      { scaleX: 0, transformOrigin: 'left center' },
+      { scaleX: 1, duration: duration * 0.8, scrollTrigger: {
+          trigger: '.experiences-title',
+          start: 'top 60%',
+          end: 'top 55%',
+          scrub: 1,
+          markers: false
+        } 
+      },
+    );
+
+    // 4. Fade in del título con efecto typed
+    this.masterTimeline.fromTo(
+      '#experiences-title',
+      { opacity: 0 },
+      { opacity: 1, duration: duration * 0.5, 
+        scrollTrigger: {
+          trigger: '#experiences-title',
+          start: 'top 60%',
+          end: 'top 40%',
+          scrub: 1,
+          markers: false
+        }  
+      },
     );
 
     // 6. Animación de cada experiencia con stagger
@@ -131,8 +153,15 @@ export class ExperiencesComponent implements OnInit, AfterViewInit, OnDestroy {
         this.masterTimeline!.fromTo(
           `#experience-card-${i}`,
           { opacity: 0, x: i % 2 === 0 ? 50 : -50 },
-          { opacity: 1, x: 0, duration: duration * 0.6 },
-          '>'
+          { opacity: 1, x: 0, duration: duration * 0.6, 
+            scrollTrigger: {
+              trigger: `#experience-card-${i}`,
+              start: 'top 70%',
+              end: 'top 40%',
+              scrub: 1,
+              markers: false
+            } 
+          },
         );
       });
     }

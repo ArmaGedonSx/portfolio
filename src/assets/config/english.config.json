@@ -58,6 +58,12 @@
       "previewImg": "Portal2Enviroment.jpg"
     },
     {
+      "projectName": "Porfolio 2022",
+      "githubRepository": "https://github.com/koinu1203/backend_App_Adopcion",
+      "description": "A small API created with Php for the consumption and manipulation of data in an animal shelter",
+      "previewImg": "phpCoding.jpg"
+    },
+    {
       "projectName": "Report Generator Page",
       "githubRepository": "https://github.com/koinu1203/GenReports-Tkambio-front",
       "projectURL": "https://koinu1203.github.io/GenReports-Tkambio-front/",
@@ -75,13 +81,13 @@
       "projectName": "Airline Proyect",
       "githubRepository": "https://github.com/koinu1203/Airline-Bootcamp-Proyect-01",
       "description": "The planning department of a well-known airline is requesting a computer program to estimate ticket sales for each commercial flight of its aircraft fleet for certain national routes.",
-      "previewImg": "logos/python-logo.svg"
+      "previewImg": "pythonProyect2.png"
     },
     {
       "projectName": "Adopcion Back End",
       "githubRepository": "https://github.com/koinu1203/backend_App_Adopcion",
       "description": "A small API created with Php for the consumption and manipulation of data in an animal shelter",
-      "previewImg": "logos/php-logo.svg"
+      "previewImg": "phpCoding.jpg"
     }
   ],
   "experience": [

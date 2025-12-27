@@ -66,8 +66,8 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
         scrollTrigger: {
           trigger: '#contact-gradient',
           start: 'top center',
-          end: 'bottom 10%',
-          scrub: true,
+          end: 'bottom 40%',
+          scrub: 1,
           markers: false
         }
       }
@@ -81,8 +81,9 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
         scrollTrigger: {
           trigger: '#contact-text-left',
           start: 'top center',
-          end: 'bottom 10%',
-          scrub: true,
+          end: 'bottom 40%',
+          scrub: 1,
+          pin: false,
           markers: false
         }
       },
@@ -97,8 +98,8 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
         scrollTrigger: {
           trigger: '#contact-text-right',
           start: 'top center',
-          end: 'bottom 10%',
-          scrub: true,
+          end: 'bottom 40%',
+          scrub: 1,
           markers: false
         }
       },
@@ -130,7 +131,7 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
           trigger: '.contact-link-list-element',
           start: 'top 80%',
           end: 'bottom 65%',
-          scrub: true,
+          scrub: 1,
           markers: false
         }
        },
@@ -146,7 +147,7 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
           trigger: '#contact-footer-line',
           start: 'top 80%',
           end: 'bottom 65%',
-          scrub: true,
+          scrub: 1,
           markers: false
         }
        },
@@ -161,8 +162,8 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
           trigger: '#contact-footer-border-1',
           start: 'top 100%',
           end: 'bottom 90%',
-          scrub: true,
-          markers: true
+          scrub: 1,
+          markers: false
         }
        },
       '<'
@@ -177,7 +178,7 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
           trigger: '#contact-footer-border-1',
           start: 'top 100%',
           end: 'bottom 90%',
-          scrub: true,
+          scrub: 1,
           markers: false
         }
        },
@@ -195,7 +196,7 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
     //       trigger: '#contact-footer-text',
     //       start: 'top 70%',
     //       end: '80% top',
-    //       scrub: true,
+    //       scrub: 1,
     //       markers: false
     //     }
     //   },

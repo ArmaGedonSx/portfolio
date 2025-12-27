@@ -29,6 +29,83 @@ export class AboutComponent implements OnInit, OnDestroy {
     this.setupScrollAnimations();
   }
   private setupScrollAnimations(): void {
+    // Animación del borde vertical izquierdo
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.about-card',
+        start: 'top 95%',
+        end: 'bottom 90%',
+        scrub: 1,
+        markers: false
+      }
+    })
+    .fromTo('.borde-about-card', 
+      { scaleY: 0, y:-500 , transformOrigin: 'top center' },
+      { scaleY: 1, y:0 }
+    );
+    
+    // Timeline independiente para los bordes de la foto
+    const photoTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.profile-photo',
+        start: 'top 60%',
+        end: 'top 50%',
+        scrub: 1,
+        markers: false,
+        onUpdate: (self) => {
+          // Detectar cuando el timeline está yendo en reversa (scroll hacia atrás)
+          if (self.direction === -1) {
+            // Quitar clase inmediatamente cuando se detecta scroll hacia atrás
+            const rightBorder = document.querySelector('.line-decoration-right');
+            const bottomBorder = document.querySelector('.line-decoration-bottom');
+            const image = document.querySelector('.about-img img');
+            if (rightBorder) rightBorder.classList.remove('rounded-corner');
+            if (bottomBorder) bottomBorder.classList.remove('rounded-corner');
+            if (image) image.classList.remove('rounded-corner');
+          }
+        }
+      }
+    });
+
+    // Animaciones secuenciales de los bordes
+    photoTimeline
+      .fromTo(
+        '.line-decoration-top',
+        { scaleX: 0, transformOrigin: 'left center' },
+        { scaleX: 1, duration: 1 }
+      )
+      .fromTo(
+        '.line-decoration-right',
+        { scaleY: 0, transformOrigin: 'top center' },
+        { scaleY: 1, duration: 1 },
+        '>-0.2'
+      )
+      .fromTo(
+        '.line-decoration-bottom',
+        { scaleX: 0, transformOrigin: 'right center' },
+        { 
+          scaleX: 1, 
+          duration: 1,
+          onComplete: () => {
+            // Agregar clase para animar el border-radius cuando completa hacia adelante
+            const rightBorder = document.querySelector('.line-decoration-right');
+            const bottomBorder = document.querySelector('.line-decoration-bottom');
+            const image = document.querySelector('.about-img img');
+            if (rightBorder) rightBorder.classList.add('rounded-corner');
+            if (bottomBorder) bottomBorder.classList.add('rounded-corner');
+            if (image) image.classList.add('rounded-corner');
+          }
+        },
+        '>-0.2'
+      )
+      .fromTo(
+        '.line-decoration-left',
+        { scaleY: 0, transformOrigin: 'top center' },
+        { scaleY: 1, duration: 1 },
+        '>-0.2'
+      );
+      
+    
     // Animación para profile-photo - entrada
     gsap.timeline({
       scrollTrigger: {
@@ -43,20 +120,6 @@ export class AboutComponent implements OnInit, OnDestroy {
     .fromTo('.profile-photo', 
       { opacity: 0, x: -100 },
       { opacity: 1, x: 0 }
-    );
-
-    // Fade out cuando sale por arriba (400px después)
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: '.profile-photo',
-        start: 'bottom+=600 80%',
-        end: 'bottom+=600 20%',
-        scrub: 1,
-        markers: false
-      }
-    })
-    .to('.profile-photo', 
-      { opacity: 0, x: -100 }
     );
 
     // Animación para about-subtitle - entrada
@@ -76,21 +139,6 @@ export class AboutComponent implements OnInit, OnDestroy {
     .fromTo('.about-subtitle', 
       { opacity: 0, x: 100 },
       { opacity: 1, x: 0 }
-    );
-
-    // Fade out cuando sale por arriba (400px después)
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: '.about-subtitle',
-        start: 'bottom+=600 80%',
-        end: 'bottom+=600 20%',
-        scrub: 1,
-        markers: false,
-        // onEnter: () => this.clearTypedText()
-      }
-    })
-    .to('.about-subtitle', 
-      { opacity: 0, x: 100 }
     );
   }
 

@@ -14,6 +14,7 @@ export class ProyectsComponent implements OnInit, AfterViewInit {
   @Output() proyectsLoaded = new EventEmitter<boolean>();
   swiper?: Swiper;
   masterTimeline?: gsap.core.Timeline;
+  borderTimeline?: gsap.core.Timeline;
   
   constructor(private elementRef: ElementRef) {
     gsap.registerPlugin(ScrollTrigger);
@@ -51,9 +52,29 @@ export class ProyectsComponent implements OnInit, AfterViewInit {
     // 2. Animación del border del título
     this.masterTimeline.fromTo(
       '#proyects-border-1',
-      { scaleY: 0, transformOrigin: 'left center' },
-      { scaleY: 1, duration },
-      "+=2.5"
+      { scaleX: 0, transformOrigin: 'left center' },
+      { scaleX: 1, duration, 
+        scrollTrigger: {
+          trigger: '#proyects-border-1',
+          start: 'top 90%',
+          end: 'top 75%',
+          scrub: 1,
+          markers: false
+        }
+       },
+    );
+    this.masterTimeline.fromTo(
+      '#proyects-border-1-2',
+      { scaleY: 0, transformOrigin: 'top center' },
+      { scaleY: 1, duration, 
+        scrollTrigger: {
+          trigger: '#proyects-border-1',
+          start: 'top 75%',
+          end: 'top 40%',
+          scrub: 1,
+          markers: false
+        }
+       },
     );
     this.masterTimeline.fromTo(
       '#proyects-title',
@@ -62,30 +83,63 @@ export class ProyectsComponent implements OnInit, AfterViewInit {
       ">"
     );
 
-    // 3. Animación del swiper container
-    this.masterTimeline.fromTo(
-      '#proyects-swiper',
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: duration * 0.8 },
-      '>-0.3'
-    );
-
-    // 4. Animación de cada slide (si hay proyectos)
-    if (this.projects && this.projects.length > 0) {
-      for (let i = 0; i < Math.min(3, this.projects.length); i++) {
-        this.masterTimeline.fromTo(
-          `#proyect-slide-content-${i}`,
-          { opacity: 0 },
-          { opacity: 1, duration: duration * 0.4 },
-          '<0.1'
-        );
+    // Timeline independiente para los bordes del swiper
+    this.borderTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: element.querySelector('#proyects-swiper'),
+        start: 'top 50%',
+        end: 'top 30%',
+        scrub: 1,
+        markers: false
       }
-    }
+    });
+
+    // Animaciones secuenciales de los bordes
+    this.borderTimeline
+      // Border superior (izquierda a derecha)
+      .fromTo(
+        '#proyects-swiper-border-top',
+        { scaleX: 0, transformOrigin: 'left center' },
+        { scaleX: 1, duration: 1 }
+      )
+      // Border derecho (arriba a abajo)
+      .fromTo(
+        '#proyects-swiper-border-right',
+        { scaleY: 0, transformOrigin: 'top center' },
+        { scaleY: 1, duration: 1 },
+        '>'
+      )
+      // Border inferior (derecha a izquierda)
+      .fromTo(
+        '#proyects-swiper-border-bottom',
+        { scaleX: 0, transformOrigin: 'right center' },
+        { scaleX: 1, duration: 1 },
+        '>'
+      )
+      // Border izquierdo (abajo a arriba)
+      .fromTo(
+        '#proyects-swiper-border-left',
+        { scaleY: 0, transformOrigin: 'bottom center' },
+        { scaleY: 1, duration: 1 },
+        '>'
+      ).fromTo(
+        '#proyects-swiper',
+        { opacity: 0 },
+        { opacity: 1, duration: duration * 0.5 },
+        '>'
+      );
+
   }
 
   ngOnDestroy(): void {
     if (this.swiper) {
       this.swiper.destroy();
+    }
+    if (this.masterTimeline) {
+      this.masterTimeline.kill();
+    }
+    if (this.borderTimeline) {
+      this.borderTimeline.kill();
     }
   }
 
@@ -110,17 +164,17 @@ export class ProyectsComponent implements OnInit, AfterViewInit {
       spaceBetween: 0,
       
       // Permite el loop infinito de slides
-      loop: false,
+      loop: true,
       
       // Velocidad de transición (más lenta para apreciar el parallax)
       speed: 500,
       
       // Autoplay automático del carousel
-      // autoplay: {
-      //   delay: 5000,                    // Tiempo entre transiciones (ms)
-      //   disableOnInteraction: false,    // Continúa después de interacción
-      //   pauseOnMouseEnter: true         // Pausa cuando el mouse está encima
-      // },
+      autoplay: {
+        delay: 5000,                    // Tiempo entre transiciones (ms)
+        disableOnInteraction: false,    // Continúa después de interacción
+        pauseOnMouseEnter: true         // Pausa cuando el mouse está encima
+      },
       
       // Paginación (bullets/puntos navegables)
       pagination: {
@@ -136,23 +190,23 @@ export class ProyectsComponent implements OnInit, AfterViewInit {
       },
       
       // Breakpoints responsive
-      breakpoints: {
-        // Móvil: 1 slide
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 0
-        },
-        // Tablet: 1 slide (parallax funciona mejor con 1 slide)
-        768: {
-          slidesPerView: 1,
-          spaceBetween: 0
-        },
-        // Desktop: 1 slide
-        1024: {
-          slidesPerView: 1,
-          spaceBetween: 0
-        }
-      }
+      // breakpoints: {
+      //   // Móvil: 1 slide
+      //   320: {
+      //     slidesPerView: 1,
+      //     spaceBetween: 0
+      //   },
+      //   // Tablet: 1 slide (parallax funciona mejor con 1 slide)
+      //   768: {
+      //     slidesPerView: 1,
+      //     spaceBetween: 0
+      //   },
+      //   // Desktop: 1 slide
+      //   1024: {
+      //     slidesPerView: 1,
+      //     spaceBetween: 0
+      //   }
+      // }
     });
   }
 

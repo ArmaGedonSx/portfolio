@@ -1,18 +1,23 @@
-<div class="about-card flex justify-center items-center">
+<div class="about-card flex justify-center items-center relative">
+  <div class="borde-about-card h-full absolute border-[#9e8857] border-r-4 left-0"></div>
   <div class="grid grid-cols-12 h-[600px]">
     <div class="profile-photo col-span-12 md:col-span-6 flex justify-center items-start">
-      <div class="about-img">
-        <div class="line-decoration"></div>
-        <img src="/assets/img/about-photo2.jpg" alt="about photo">
+      <div class="about-img relative">
+        <!-- Bordes animados de la foto -->
+        <div class="line-decoration-top absolute border-[#9e8857] top-[10px] left-[10px] w-full border-t-2 "></div>
+        <div class="line-decoration-left absolute border-[#9e8857] top-[10px] left-[10px] h-full w-full  border-l-2 "></div>
+        <div class="line-decoration-bottom absolute border-[#9e8857] bottom-[-10px] left-[10px] w-full h-full border-b-2 "></div>
+        <div class="line-decoration-right absolute border-[#9e8857] top-[10px] right-[-10px] w-full  h-full border-r-2 "></div>
+        <img class="" src="/assets/img/about-photo2.jpg" alt="about photo">
       </div>
     </div>
     <div class="about-subtitle col-span-12 md:col-span-6 flex items-end justify-center">
-      <div class="about-info px-3 md:px-0">
+      <div class="about-info px-9 md:px-0">
         <h2 class="text-[#9e8857] monoton-regular text-3xl md:text-4xl">
           <span class="typed-text"></span>
         </h2>
         <p class="about-message font-normal text-white/60">
-          Beyond just code, I am a problem solver. As a <strong class="text-[#9e8857]">Systems Engineer</strong> and <strong class="text-[#9e8857]">Fullstack Developer</strong>, I specialize in crafting fast, scalable web applications by bridging the gap between robust <strong class="text-[#9e8857]">Back-End</strong> logic and modern <strong class="text-[#9e8857]">Front-End</strong> interfaces. I am driven by the goal of building simple, elegant systems to solve complex problems. From startups to large corporations, I have led critical migrations and optimized high-traffic platforms, achieving up to 60% reduction in operational costs while ensuring a superior user experience.
+          Beyond the code, I'm a challenge seeker. As a <strong class="text-[#9e8857]">Systems Engineer</strong> and <strong class="text-[#9e8857]">Fullstack Developer</strong>, I specialize in creating fast and scalable web applications by applying the best <strong class="text-[#9e8857]">Back-End</strong> technologies with modern <strong class="text-[#9e8857]">Front-End</strong> interfaces. My goal is to build simple, elegant, and functional systems. Since 2021, I've been working with various startups and companies developing applications, performing optimizations, and refactoring projects. I've led critical migrations and optimized high-traffic platforms, achieving up to a 60% reduction in operating costs while maintaining system operability.
         </p>
       </div>
     </div>

@@ -8,17 +8,20 @@
   .about-img{
     width: 300px;
     height: 300px;
-    border-radius: 20px 0px 20px 0px;
+    // border-radius: 20px 0px 20px 0px;
     img{
-      position:relative;
-      bottom: 320px;
-      right: 20px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
       width: inherit;
       height: inherit;
-      border-radius: inherit;
+      // border-radius: inherit;
       @include md{
-        bottom: 220px;
+        // bottom: 220px;
       }
+    }
+    img.rounded-corner{
+
     }
     .line-decoration{
       position:relative;
@@ -62,4 +65,17 @@
       margin: 2em 0px;
     }
   }
+}
+
+.line-decoration-right,
+.line-decoration-bottom {
+  border-bottom-right-radius: 0;
+  transition: border-bottom-right-radius 0.5s ease-out;
+  
+}
+.rounded-corner {
+  // border-bottom-right-radius: 1.5rem;
+  border-radius: 1.5rem 0px 1.5rem 0px;
+  border-left: 2px;
+  border-top: 2px;
 }

@@ -69,9 +69,9 @@ export class SkillsComponent implements OnInit, OnDestroy, AfterViewInit {
         ease: 'none',
         scrollTrigger: {
           trigger: '#skills-border-1',
-          start: 'top 70%',
-          end: '80% top',
-          scrub: true,
+          start: 'top 90%',
+          end: 'bottom 70%',
+          scrub: 1,
           markers: false
         }
       }
@@ -94,10 +94,17 @@ export class SkillsComponent implements OnInit, OnDestroy, AfterViewInit {
     // );
     this.masterTimeline.fromTo(
       '#skills-border-3',
-      { scaleY: 0, transformOrigin: 'top center' },
+      { scaleY: 0,  transformOrigin: 'top center' },
       { scaleY: 1, duration },
-      '>-0.2'
+      '>'
     );
+    this.masterTimeline.fromTo(
+      '#skills-border-3-1',
+      { scaleX: 0, transformOrigin: 'left center' },
+      { scaleX: 1, duration },
+      '>'
+    );
+    
     this.masterTimeline.fromTo(
       '#skills-border-2',
       { scaleX: 0, transformOrigin: 'left center' },
@@ -111,10 +118,6 @@ export class SkillsComponent implements OnInit, OnDestroy, AfterViewInit {
       '>-0.2'
     );
 
-    
-
-    
-
     // 5. Animación: skills-border-4 (height - scaleY)
     this.masterTimeline.fromTo(
       '#skills-border-4',
@@ -125,12 +128,28 @@ export class SkillsComponent implements OnInit, OnDestroy, AfterViewInit {
         scrollTrigger: {
           trigger: '#skills-border-4',
           start: 'top 70%',
-          end: '80% top',
-          scrub: true,
+          end: 'top 15%',
+          scrub: 1,
           markers: false
         }
       },
-      '>-0.2'
+      '>'
+    );
+    this.masterTimeline.fromTo(
+      '#skills-border-5',
+      { scaleY: 0, transformOrigin: 'top center' },
+      {
+        scaleY: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '#skills-border-5',
+          start: 'top 57%',
+          end: 'top 20%',
+          scrub: 1,
+          markers: false
+        }
+      },
+      '>'
     );
 
     // 6-8. Animaciones de cada sección COMPLETA (Languages, Frameworks, Tools)
@@ -196,22 +215,7 @@ export class SkillsComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     // 9. Animación final: skills-border-5 (height - scaleY)
-    this.masterTimeline.fromTo(
-      '#skills-border-5',
-      { scaleY: 0, transformOrigin: 'top center' },
-      {
-        scaleY: 1,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '#skills-border-5',
-          start: 'top 70%',
-          end: '80% top',
-          scrub: true,
-          markers: false
-        }
-      },
-      '<'
-    );
+    
   }
 
   setupTreeSeparatorAnimation(): void {
