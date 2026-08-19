@@ -4,9 +4,10 @@ $viewHeight: 100svh;
 
 app-home {
   position: relative;
-  display: block;
-  min-height: $viewHeight !important;
-  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
   padding-inline: 24px;
   @include lg {
     padding-inline: 0px;

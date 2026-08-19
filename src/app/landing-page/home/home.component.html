@@ -16,12 +16,11 @@
           <strong class="text-parchment-ink font-semibold">Bán János</strong> vagyok, <strong class="text-walnut-light font-semibold">Medior Full-Stack & Hibrid Mobil Mérnök</strong>. Olyan nagy megbízhatóságú webes és mobil rendszereket tervezek és fejlesztek, ahol az offline-first működés, a reaktív Signals állapotkezelés és a szigorú típusbiztonság alapkövetelmény.
         </p>
         <div class="flex items-center gap-4">
-          <a class="relative z-20 inline-block" href="mailto:ban.jani2011@gmail.com">
-            <button type="button"
-              class="px-7 py-3 rounded-md font-bold uppercase text-[#131313] bg-walnut hover:bg-walnut-light transition-all shadow-md hover:shadow-walnut/30 text-sm md:text-base">
-              Kapcsolatfelvétel
-            </button>
-          </a>
+          <button type="button"
+            (click)="contactClick.emit()"
+            class="relative z-20 px-7 py-3 rounded-md font-bold uppercase text-[#131313] bg-walnut hover:bg-walnut-light transition-all shadow-md hover:shadow-walnut/30 text-sm md:text-base cursor-pointer">
+            Kapcsolatfelvétel
+          </button>
         </div>
       </div>
 
@@ -51,7 +50,7 @@
     </div>
     
     <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
+    <div class="scroll-indicator cursor-pointer" (click)="scrollDownClick.emit()">
       <div class="scroll-indicator-icon text-walnut">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 5V19M12 19L6 13M12 19L18 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

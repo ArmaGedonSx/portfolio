@@ -1,10 +1,10 @@
-<div id="experiences-container" class="experiences-container h-full relative py-12">
+<div id="experiences-container" class="experiences-container h-full relative py-4 sm:py-6">
   <!-- Top connecting timeline line -->
-  <div id="experiences-border-top" class="relative w-[2px] h-[50px] lg:h-[80px] border-l-2 border-walnut mx-auto"></div>
+  <div id="experiences-border-top" class="relative w-[2px] h-[20px] lg:h-[30px] border-l-2 border-walnut mx-auto"></div>
   
   <!-- Title Badge (Symmetrical and framed) -->
-  <div class="experiences-title w-fit relative my-6 mx-auto">
-    <div class="relative px-8 py-3 bg-forge-surface border-2 border-walnut rounded-xl shadow-xl">
+  <div class="experiences-title w-fit relative my-3 mx-auto">
+    <div class="relative px-8 py-2 bg-forge-surface border-2 border-walnut rounded-xl shadow-xl">
       <h3 id="experiences-title" class="monoton-regular text-2xl sm:text-3xl lg:text-4xl text-walnut tracking-wider text-center">
         Tapasztalat
       </h3>
@@ -12,11 +12,11 @@
   </div>
 
   <!-- Continuous vertical timeline container -->
-  <div class="experiences-timeline-wrapper relative max-w-5xl mx-auto mt-6 px-4">
+  <div class="experiences-timeline-wrapper relative max-w-5xl mx-auto mt-4 px-4">
     <!-- Center vertical timeline line (animated scaleY on scroll) -->
     <div id="line-experiences-list" class="line-experiences-list absolute left-6 md:left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2 border-l-2 border-walnut z-0"></div>
 
-    <div class="space-y-12 relative z-10">
+    <div class="space-y-6 lg:space-y-8 relative z-10">
       <div *ngFor="let experience of experiences; let i = index" class="experience-row relative">
         <app-experience-card 
           [technologies]="technologies" 

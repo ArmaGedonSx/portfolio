@@ -1,8 +1,8 @@
-<div id="contact-container" class="relative py-16">
+<div id="contact-container" class="relative py-6 sm:py-8">
 
   <!-- Vízszintes, prémium mérnöki hitvallás (Philosophy Statement - Tiszta tér, vonalátfedés nélkül) -->
-  <div class="contact-statement max-w-3xl mx-auto text-center px-6 my-8 relative z-10">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-forge-surface border border-walnut/35 text-[10.5px] sm:text-[11px] text-walnut uppercase tracking-[0.25em] font-semibold mb-6 shadow-lg shadow-black/40">
+  <div class="contact-statement max-w-3xl mx-auto text-center px-6 my-3 relative z-10">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-forge-surface border border-walnut/35 text-[10.5px] sm:text-[11px] text-walnut uppercase tracking-[0.25em] font-semibold mb-3 shadow-lg shadow-black/40">
       <span class="size-1.5 rounded-full bg-walnut animate-pulse"></span>
       <span>{{ philosophy?.badge || 'Mérnöki Szemlélet' }}</span>
     </div>
@@ -14,20 +14,20 @@
   </div>
 
   <!-- Központi összekötő vonal az idézet és a Kapcsolat cím között -->
-  <div class="relative w-[2px] h-12 border-l-2 border-walnut mx-auto my-8"></div>
+  <div class="relative w-[2px] h-6 border-l-2 border-walnut mx-auto my-3"></div>
 
   <!-- Kapcsolat tartalom kártya -->
   <div class="max-w-xl mx-auto px-6 flex flex-col items-center text-center relative z-10">
-    <h2 id="contact-title" class="monoton-regular text-walnut text-3xl sm:text-4xl lg:text-5xl py-2 mb-2">
+    <h2 id="contact-title" class="monoton-regular text-walnut text-3xl sm:text-4xl lg:text-5xl py-1 mb-2">
       {{ contactInfo?.title || 'Kapcsolat' }}
     </h2>
     
-    <p class="text-parchment-muted text-xs sm:text-sm max-w-md mb-8 leading-relaxed">
+    <p class="text-parchment-muted text-xs sm:text-sm max-w-md mb-6 leading-relaxed">
       {{ contactInfo?.subtitle || 'Keress bizalommal új projektek vagy együttműködés kapcsán:' }}
     </p>
 
     <!-- 3 egyforma méretű, tiszta vektoros elérhetőségi gomb (Matte Dark Depth) -->
-    <div class="flex items-center justify-center gap-4 sm:gap-6 mb-12">
+    <div class="flex items-center justify-center gap-4 sm:gap-6 mb-6">
       
       <!-- GitHub gomb -->
       <a [href]="contactInfo?.github || 'https://github.com'" target="_blank" rel="noopener noreferrer" 

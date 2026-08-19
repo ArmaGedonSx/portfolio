@@ -19,13 +19,18 @@ $viewHeight: 100vh;
 html {
   background-color: $color-background;
   scroll-behavior: auto;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 body {
   margin: 0px;
   background-color: $color-background;
   color: $color-gray-light;
-  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 

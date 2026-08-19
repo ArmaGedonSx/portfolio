@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  @Output() contactClick = new EventEmitter<void>();
+  @Output() scrollDownClick = new EventEmitter<void>();
 
   title: string = 'János!';
   subtitle: string = '<Full-Stack & Mobile Developer/>';
