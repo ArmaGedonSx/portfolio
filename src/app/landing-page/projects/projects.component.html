@@ -1,47 +1,54 @@
-<div id="projects-container" class="projects-container px-2 relative">
-  <div class="projects-title relative right-0 w-fit">
-    <h3 id="projects-title" class="monoton-regular text-2xl lg:text-5xl p-3 text-walnut">Válogatott Projektek</h3>
-    <div id="projects-border-1" class="absolute w-full h-[100%] border-t-2 border-walnut bottom-0"></div>
-    <div id="projects-border-1-2" class="absolute w-full h-[100%] border-l-2 border-r-2 border-walnut bottom-0"></div>
-  </div>
-  <div class="projects-portfolio relative">
-    <div class="relative p-[4px]">
-      <!-- Keretek -->
-      <div id="projects-swiper-border-top" class="absolute top-0 left-0 w-full border-t-2 border-walnut z-10"></div>
-      <div id="projects-swiper-border-right" class="absolute top-0 right-0 h-full border-r-2 border-walnut z-10"></div>
-      <div id="projects-swiper-border-bottom" class="absolute bottom-0 left-0 w-full border-b-2 border-walnut z-10"></div>
-      <div id="projects-swiper-border-left" class="absolute top-0 left-0 h-full border-l-2 border-walnut z-10"></div>
-      
-      <div id="projects-swiper" class="swiper projects-swiper overflow-hidden rounded-lg">
-        <!-- Parallax háttér textúra -->
-        <div class="parallax-bg" data-swiper-parallax="-20%"></div>
-      
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" [id]="'project-slide-' + i" *ngFor="let project of projects; let i = index">
-            <!-- Projekt előnézeti háttérkép finom parallax-szal -->
-            <div [id]="'project-slide-bg-' + i" class="slide-bg" 
-                 [style.background-image]="'url(/assets/img/' + project.previewImg + ')'" 
-                 data-swiper-parallax="-20%"></div>
-            
-            <!-- Sötét átmenetes overlay a tökéletes olvashatóságért -->
-            <div [id]="'project-slide-overlay-' + i" class="slide-overlay bg-black/75" data-swiper-parallax="-10%"></div>
-            
-            <!-- Projekt információs kártya -->
-            <div [id]="'project-slide-content-' + i" class="slide-content content-end" 
-                 data-swiper-parallax="-150" 
-                 data-swiper-parallax-opacity="0">
-              <app-project-card [dataProject]="project" [hideImage]="true"></app-project-card>
-            </div>
-          </div>
-        </div>
-
-        <!-- Lapozó indikátor pontok (Morphing Gold Bullets) -->
-        <div class="swiper-pagination !bottom-3 !z-30"></div>
-
-        <!-- Navigációs gombok -->
-        <div class="swiper-button-prev !hidden !lg:flex !left-4 !z-30 transition-all duration-200"></div>
-        <div class="swiper-button-next !hidden !lg:flex !right-4 !z-30 transition-all duration-200"></div>
-      </div>
+<div id="projects-container" class="projects-container px-2 sm:px-4 relative max-w-6xl mx-auto w-full flex flex-col justify-center">
+  
+  <!-- Szekció Fejléc (Szimmetrikus prémium keret) -->
+  <div class="projects-title w-fit relative mb-6 mx-auto">
+    <div class="relative px-6 sm:px-8 py-2 bg-forge-surface border-2 border-walnut rounded-xl shadow-xl">
+      <h3 id="projects-title" class="monoton-regular text-2xl sm:text-3xl lg:text-4xl text-walnut tracking-wider text-center">
+        Válogatott Projektek
+      </h3>
     </div>
   </div>
+
+  <!-- FŐ PROJEKT BEMUTATÓ (Split Showcase Swiper) -->
+  <div class="projects-swiper-wrapper relative w-full">
+    <div class="swiper projects-swiper overflow-hidden rounded-2xl">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide !h-auto w-full" *ngFor="let project of projects; let i = index">
+          <app-project-card 
+            [dataProject]="project" 
+            [projectIndex]="i" 
+            [totalProjects]="projects?.length || 3"></app-project-card>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alsó Letisztult Lapozó és Pöttyök (Végtelenített ciklikus lapozás) -->
+    <div class="flex items-center justify-center gap-6 mt-4">
+      <button (click)="prevSlide()" 
+              class="p-2.5 rounded-xl bg-[#222222] hover:bg-[#C5A059] hover:text-black text-gray-300 border border-white/10 hover:border-[#C5A059]/50 transition-all duration-200 shadow-md cursor-pointer active:scale-95"
+              title="Előző projekt">
+        <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <!-- Morfolódó Pontok -->
+      <div class="flex items-center gap-2">
+        <span *ngFor="let p of projects; let i = index" 
+              (click)="selectProject(i)"
+              [class.active-dot]="activeIndex === i"
+              class="project-dot cursor-pointer"
+              [title]="'Projekt ' + (i + 1)"></span>
+      </div>
+
+      <button (click)="nextSlide()" 
+              class="p-2.5 rounded-xl bg-[#222222] hover:bg-[#C5A059] hover:text-black text-gray-300 border border-white/10 hover:border-[#C5A059]/50 transition-all duration-200 shadow-md cursor-pointer active:scale-95"
+              title="Következő projekt">
+        <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+
 </div>

@@ -1,36 +1,79 @@
-<div class="project-card-wrapper flex flex-col justify-between gap-4 px-6 py-6 bg-forge-surface/90 border-t border-forge-hairline backdrop-blur-md text-parchment-ink w-full min-h-[190px]">
-  <div class="flex flex-col gap-2 max-w-prose">
-    <span class="project-title font-bold text-lg sm:text-2xl lg:text-3xl text-walnut leading-tight tracking-wide">
-      {{ dataProject.projectName }}
-    </span>
-    <p class="project-description text-xs sm:text-sm lg:text-base text-parchment-muted leading-relaxed max-w-xl">
-      {{ dataProject.description }}
-    </p>
-  </div>
+<div class="project-showcase-card w-full bg-[#1A1A1A] border border-[#C5A059]/30 rounded-2xl p-4 sm:p-6 lg:p-7 shadow-2xl overflow-hidden relative">
+  <div class="grid grid-cols-12 gap-6 lg:gap-8 items-center">
+    
+    <!-- Bal oldal: Adatok, Cím, Leírás, Gombok -->
+    <div class="col-span-12 lg:col-span-6 flex flex-col justify-between gap-4">
+      <div class="space-y-3">
+        <!-- Index sáv -->
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-1 rounded-lg bg-[#242424] border border-[#C5A059]/40 text-[#C5A059] text-[11px] font-mono font-bold tracking-wider uppercase">
+            Projekt 0{{ projectIndex + 1 }} / 0{{ totalProjects }}
+          </span>
+        </div>
 
-  <div class="card-buttons flex flex-wrap items-center gap-3 pt-2">
-    <a *ngIf="dataProject.projectURL && dataProject.projectURL !== '#'" 
-       [href]="dataProject.projectURL" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-walnut hover:bg-walnut-light text-forge-black font-bold text-xs uppercase tracking-wider transition-colors shadow-md">
-      <span>{{ currentLang === Languages.HUNGARIAN ? 'Megtekintés' : 'Live Demo' }}</span>
-      <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-        <polyline points="15 3 21 3 21 9"></polyline>
-        <line x1="10" y1="14" x2="21" y2="3"></line>
-      </svg>
-    </a>
+        <!-- Projekt Cím -->
+        <h4 class="project-title text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-tight tracking-wide">
+          {{ dataProject.projectName }}
+        </h4>
 
-    <a *ngIf="dataProject.githubRepository" 
-       [href]="dataProject.githubRepository" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-forge-raised hover:bg-forge-surface text-parchment-ink hover:text-walnut border border-forge-hairline hover:border-walnut/60 font-semibold text-xs uppercase tracking-wider transition-colors shadow-md">
-      <svg class="size-4" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/>
-      </svg>
-      <span>{{ currentLang === Languages.HUNGARIAN ? 'Forráskód' : 'Source Code' }}</span>
-    </a>
+        <!-- Projekt Leírás (Magas kontraszt, tökéletes olvashatóság) -->
+        <p class="project-description text-xs sm:text-sm lg:text-[15px] text-gray-300 leading-relaxed max-w-xl">
+          {{ dataProject.description }}
+        </p>
+      </div>
+
+      <!-- Gombok (Élő / GitHub) -->
+      <div class="card-buttons flex flex-wrap items-center gap-3 pt-2">
+        <a *ngIf="dataProject.projectURL && dataProject.projectURL !== '#'" 
+           [href]="dataProject.projectURL" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#C5A059] hover:bg-[#D4A373] text-black font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-lg shadow-[#C5A059]/20 hover:scale-[1.02] active:scale-[0.98]">
+          <span>{{ currentLang === Languages.HUNGARIAN ? 'Megtekintés' : 'Live Demo' }}</span>
+          <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+
+        <a *ngIf="dataProject.githubRepository" 
+           [href]="dataProject.githubRepository" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#242424] hover:bg-[#2C2C2C] text-white hover:text-[#C5A059] border border-white/15 hover:border-[#C5A059]/60 font-semibold text-xs uppercase tracking-wider transition-all duration-200 shadow-md hover:scale-[1.02] active:scale-[0.98]">
+          <svg class="size-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/>
+          </svg>
+          <span>{{ currentLang === Languages.HUNGARIAN ? 'Forráskód' : 'Source Code' }}</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Jobb oldal: ÉLES, TISZTA Screenshot Mockup Ablak -->
+    <div class="col-span-12 lg:col-span-6">
+      <div class="mockup-window rounded-xl bg-[#141414] border border-[#C5A059]/30 shadow-2xl overflow-hidden flex flex-col group">
+        <!-- Mockup Fejléc -->
+        <div class="px-3.5 py-2 bg-[#202020] border-b border-white/10 flex items-center justify-between">
+          <div class="flex items-center gap-1.5">
+            <span class="size-2.5 rounded-full bg-red-500/80"></span>
+            <span class="size-2.5 rounded-full bg-yellow-500/80"></span>
+            <span class="size-2.5 rounded-full bg-green-500/80"></span>
+          </div>
+          <span class="text-[10px] font-mono text-gray-400 truncate max-w-[200px]">
+            {{ dataProject.projectName }}
+          </span>
+          <div class="size-2.5"></div>
+        </div>
+
+        <!-- Mockup Kép (100%-ban éles és jól látható) -->
+        <div class="relative w-full h-[190px] sm:h-[220px] lg:h-[240px] bg-[#111111] overflow-hidden">
+          <img [src]="'/assets/img/' + dataProject.previewImg" 
+               [alt]="dataProject.projectName" 
+               class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]">
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

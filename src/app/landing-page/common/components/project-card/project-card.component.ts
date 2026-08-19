@@ -11,6 +11,8 @@ import { DataService } from '../../services/data.service';
 })
 export class ProjectCardComponent implements OnInit, OnDestroy {
   @Input() dataProject!: IProject;
+  @Input() projectIndex: number = 0;
+  @Input() totalProjects: number = 3;
   @Input() hideImage: boolean = false;
   
   Languages = Languages;
