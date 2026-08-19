@@ -1,48 +1,50 @@
 <div class="home-background" alt="keyboard background">
   <section class="home-container">
-    <div class="grid grid-cols-12 gap-4">
-      <div class="col-span-12 lg:col-span-9 grid grid-cols-12 gap-4">
-        <p class="col-span-12 home-banner-title flex items-start justify-start inter-500 flex flex-col">
-          <span class="text-white/80 block items-start text-xl lg:text-4xl">
-            Hi, I'm&nbsp;
+    <div class="grid grid-cols-12 gap-6 items-center min-h-[75vh]">
+      <!-- Left column: Introduction, Title, Description, Button -->
+      <div class="col-span-12 md:col-span-8 lg:col-span-8 flex flex-col justify-center z-10">
+        <div class="home-banner-title flex items-start justify-start inter-500 flex-col mb-3">
+          <span class="text-parchment-muted block text-lg md:text-2xl lg:text-3xl font-light">
+            Szia, én&nbsp;
           </span>
-          <span class="flex items-center justify-start ms-4 lg:ms-4">
-            <span [ngClass]="{ 'text-4xl lg:text-6xl lg:text-6xl monoton-regular':true}">{{title}}</span>
-            <span class="home-banner-title-selector text-5xl lg:text-6xl lg:text-7xl ms-1" *ngIf="true">&nbsp;</span>
+          <span class="flex items-center justify-start mt-1">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-walnut monoton-regular tracking-wide leading-tight">{{title}}</h1>
+            <span class="home-banner-title-selector text-4xl sm:text-5xl lg:text-6xl ms-2">&nbsp;</span>
           </span>
+        </div>
+        <p class="home-subtitle text-parchment-muted font-normal text-sm sm:text-base md:text-lg leading-relaxed max-w-[620px] mb-6">
+          <strong class="text-parchment-ink font-semibold">Bán János</strong> vagyok, <strong class="text-walnut-light font-semibold">Medior Full-Stack & Hibrid Mobil Mérnök</strong>. Olyan nagy megbízhatóságú webes és mobil rendszereket tervezek és fejlesztek, ahol az offline-first működés, a reaktív Signals állapotkezelés és a szigorú típusbiztonság alapkövetelmény.
         </p>
-        <p
-          class="home-subtitle col-span-12 lg:col-span-8 text-white/80 font-light text-white/60 text-sm leading-[1.4rem] lg:leading-[1.75rem] lg:text-xl">
-          Hi! I'm <strong class="text-white">Daniel Ortiz</strong>. A <strong class="text-white">Web Developer</strong> with 4 years of experience specializing in building high-performance, scalable web solutions. I focus on delivering efficient software and exceptional user experiences.
-        </p>
-        <div class="col-span-12">
-          <a class="relative z-20" href="https://www.upwork.com/freelancers/~01d7efdbda5fa02a63?mp_source=share" target="_blank">
+        <div class="flex items-center gap-4">
+          <a class="relative z-20 inline-block" href="mailto:ban.jani2011@gmail.com">
             <button type="button"
-              class=" px-8 rounded-none inter-800 uppercase text-[#212121] hover:text-white/70 text-md lg:text-xl bg-[#9e8857] hover:bg-[#9e6857] ">Hire&nbsp;Me</button>
+              class="px-7 py-3 rounded-md font-bold uppercase text-[#131313] bg-walnut hover:bg-walnut-light transition-all shadow-md hover:shadow-walnut/30 text-sm md:text-base">
+              Kapcsolatfelvétel
+            </button>
           </a>
         </div>
       </div>
-      <div class="col-span-12 lg:col-span-3">
-        <div class="absolute bottom-[10%] lg:right-[4%] w-full">
-          <div class="grid grid-cols-3 lg:grid-cols-1 gap-8 text-white/80 inter-300 text-center lg:text-right ">
-            <div class="col-span">
-              <h5 class="text-3xl lg:text-4xl text-[#9e8857] font-black mb-1.5">
-                4<span class="text-2xl">+</span>
-              </h5>
-              <span class="">Years of Experience</span>
+
+      <!-- Right column: Metrics (Fókuszban a projektek és a minőség) -->
+      <div class="home-metrics-container col-span-12 md:col-span-4 lg:col-span-4 flex flex-col items-center md:items-end justify-center z-10 mt-6 md:mt-0">
+        <div class="flex flex-row md:flex-col gap-4 sm:gap-6 w-full max-w-[320px] justify-between md:justify-center">
+          <div class="col-span text-center md:text-right">
+            <div class="text-3xl sm:text-4xl lg:text-5xl text-walnut font-black mb-0.5">
+              2<span class="text-xl sm:text-2xl text-walnut-light">+</span>
             </div>
-            <div class="col-span">
-              <h5 class="text-3xl lg:text-4xl text-[#9e8857] font-black mb-1.5">
-                7<span class="text-2xl">+</span>
-              </h5>
-              <span class="">Projects worked on</span>
+            <span class="text-xs sm:text-sm text-parchment-muted font-medium uppercase tracking-wider block">Év Tapasztalat</span>
+          </div>
+          <div class="col-span text-center md:text-right">
+            <div class="text-3xl sm:text-4xl lg:text-5xl text-walnut font-black mb-0.5">
+              10<span class="text-xl sm:text-2xl text-walnut-light">+</span>
             </div>
-            <div class="col-span">
-              <h5 class="text-3xl lg:text-4xl text-[#9e8857] font-black mb-1.5">
-                6K<span class="text-2xl">+</span>
-              </h5>
-              <span class="">Hours Worked</span>
+            <span class="text-xs sm:text-sm text-parchment-muted font-medium uppercase tracking-wider block">Komplex Projekt</span>
+          </div>
+          <div class="col-span text-center md:text-right">
+            <div class="text-3xl sm:text-4xl lg:text-5xl text-walnut font-black mb-0.5">
+              100<span class="text-xl sm:text-2xl text-walnut-light">%</span>
             </div>
+            <span class="text-xs sm:text-sm text-parchment-muted font-medium uppercase tracking-wider block">Típusbiztos Kód</span>
           </div>
         </div>
       </div>
@@ -50,12 +52,12 @@
     
     <!-- Scroll Indicator -->
     <div class="scroll-indicator">
-      <div class="scroll-indicator-icon">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="scroll-indicator-icon text-walnut">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 5V19M12 19L6 13M12 19L18 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-      <span class="scroll-indicator-text">Scroll Down</span>
+      <span class="scroll-indicator-text text-parchment-muted text-[11px] uppercase tracking-widest">Görgess lejjebb</span>
     </div>
   </section>
 </div>

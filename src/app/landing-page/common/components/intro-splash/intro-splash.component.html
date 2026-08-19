@@ -1,20 +1,78 @@
-<div class="intro-splash h-svh w-svw flex items-center justify-center" *ngIf="isVisible">
+<div class="intro-splash" *ngIf="isVisible">
     <div class="splash-bg">
-        <div *ngFor="let col of columns; let i = index" class="splash-column" [attr.data-col]="i">
-        </div>
+        <div *ngFor="let col of columns; let i = index" class="splash-column" [attr.data-col]="i"></div>
     </div>
+    
     <div class="intro-content">
+        <!-- Név és titulus -->
         <h1 class="intro-name">
-            <span *ngFor="let letter of titleLetters; let i = index" class="monoton-regular ">
+            <span *ngFor="let letter of titleLetters; let i = index" class="monoton-regular">
                 <span [ngClass]="{'intro-text':true,'intro-text-up':i%2!=0, 'intro-text-down':i%2==0}" *ngIf="letter !== ' '">{{ letter }}</span>
                 <span class="intro-text monoton-regular" *ngIf="letter === ' '">&nbsp;</span>
             </span>
         </h1>
+        
         <p class="intro-subtitle inter-500">
-            <span *ngFor="let subTitleletter of subtitleLetters; let i = index" class="intro-text inter-500 w-auto">
+            <span *ngFor="let subTitleletter of subtitleLetters; let i = index" class="intro-text inter-500">
                 <span *ngIf="subTitleletter !== ' '">{{ subTitleletter }}</span>
                 <span *ngIf="subTitleletter === ' '">&nbsp;</span>
             </span>
         </p>
+
+        <!-- Finom, letisztult interaktív vezérlő -->
+        <div class="intro-lang-card">
+            
+            <!-- Minimalista nyelvváltó (HU | EN) -->
+            <div class="lang-switch-minimal">
+                <button type="button"
+                        (click)="selectLanguage(Languages.HUNGARIAN)"
+                        [class.active]="selectedLang === Languages.HUNGARIAN"
+                        class="lang-btn-subtle">
+                    MAGYAR
+                </button>
+                <span style="color: rgba(185, 135, 93, 0.4); font-size: 10px; select-none">•</span>
+                <button type="button"
+                        (click)="selectLanguage(Languages.ENGLISH)"
+                        [class.active]="selectedLang === Languages.ENGLISH"
+                        class="lang-btn-subtle">
+                    ENGLISH
+                </button>
+            </div>
+
+            <!-- Finom, elegáns elhúzható sáv (Slide to Enter) -->
+            <div #sliderTrack
+                 class="slide-track"
+                 (click)="onTrackClick($event)">
+                
+                <!-- Finom arany háttér-kitöltés -->
+                <div #sliderProgress
+                     class="slide-progress"
+                     style="width: 38px;"></div>
+
+                <!-- Felirat a csúszka közepén -->
+                <div #sliderText class="slide-text">
+                    <span>{{ selectedLang === Languages.HUNGARIAN ? 'Húzd el a belépéshez →' : 'Slide to explore →' }}</span>
+                </div>
+
+                <!-- Finom csúszó gomb -->
+                <div #sliderThumb
+                     class="slide-knob"
+                     (pointerdown)="onDragStart($event)">
+                    
+                    <svg *ngIf="!isUnlocked" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+
+                    <svg *ngIf="isUnlocked" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+
+                <!-- Célállomás diszkrét pont a jobb szélen -->
+                <div class="destination-icon">●</div>
+
+            </div>
+
+        </div>
     </div>
 </div>

@@ -1,28 +1,57 @@
-<div [ngClass]="{'experience-card-container w-full relative inline-grid justify-items-center':true, 'test':!imageOnRight}" *ngIf="experience && technologies">
-  <!-- <div [ngClass]="{'absolute w-[20%]  border-[#9e8857] ':true, 'border-r-4 left-0 custom-img-on-right border-t-4 top-[40px]':!imageOnRight, 'top-0 right-0 h-[40px] border-b-4':imageOnRight}"></div> -->
-  <div class="lg:absolute size-[80px]"
-       [ngClass]="{'right-[-40px]': imageOnRight, 'left-[-40px]': !imageOnRight, 'top-[10px]':true}">
-    <div class="border-[#9e8857] w-fit h-fit border-4 rounded-full shadow-inner shadow-white/50 shadow-md shadow-[#9e8857]/50">
-      <img [src]="experience.companyIcon" class="rounded-full" [alt]="experience.companyIcon">
+<div class="experience-card-item relative w-full" *ngIf="experience">
+  
+  <!-- Center Timeline Node (Badge Circle with SVG Logo) -->
+  <div class="absolute left-6 md:left-1/2 -translate-x-1/2 top-5 z-20">
+    <div class="size-11 rounded-full bg-forge-surface border-2 border-walnut flex items-center justify-center shadow-md shadow-black/60 p-1">
+      <img [src]="experience.companyIcon" class="size-7 rounded-full object-contain" [alt]="experience.company">
     </div>
-  </div>
-  <div class="py-2 lg:absolute"
-       [ngClass]="{'top-[40px]':true,'right-[-240px]': imageOnRight, 'left-[-240px]': !imageOnRight}">
-    <span class="experience-card-subtitle text-[#9e6857]/80 font-black bg-[#212121]">{{formatDate(experience.startTime)}} - {{formatDate(experience.endTime)}}</span>
   </div>
 
-  <div class=" relative max-w-[80%]">
-    <div [ngClass]="{'absolute  border-[#9e8857] border-b-4 w-[60%] h-[60%] bottom-0 border-l-4 ':true, 'left-0':!imageOnRight, 'h-[50%]':imageOnRight}"></div>
-    <div class="experience-card-header relative">
-      <div class="experience-card-title  bg-[#212121] flex">
-        <h4 class="experience-card-company-name pt-[8px] px-[12px] text-[#576d9e]/70 uppercase font-bold text-nowrap bg-[#212121]">{{experience.company}}</h4>
-        <div class="w-full relative h-[1px]">
-          <div [ngClass]="{'absolute w-full border-[#9e8857] border-t-4 border-r-4 top-[20px] h-[50px]':true}"></div>
+  <!-- Card Container (Alternating on Desktop, Right-aligned on Mobile) -->
+  <div class="w-full" [ngClass]="{
+    'pl-14 md:pl-0 md:w-[calc(50%-36px)] md:mr-auto': imageOnRight,
+    'pl-14 md:pl-0 md:w-[calc(50%-36px)] md:ml-auto': !imageOnRight
+  }">
+    <div class="relative bg-forge-surface/95 border border-forge-hairline hover:border-walnut/60 rounded-xl p-5 md:p-6 shadow-xl transition-all duration-300">
+      
+      <!-- Horizontal Connector Bar (Desktop) -->
+      <div *ngIf="imageOnRight" class="hidden md:block absolute top-8 -right-[36px] w-[36px] border-t-2 border-walnut/70 pointer-events-none"></div>
+      <div *ngIf="!imageOnRight" class="hidden md:block absolute top-8 -left-[36px] w-[36px] border-t-2 border-walnut/70 pointer-events-none"></div>
+
+      <!-- Header: Company Name & Date Pill -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3 pb-3 border-b border-forge-hairline">
+        <div>
+          <h4 class="text-walnut font-bold text-lg tracking-wide uppercase">{{ experience.company }}</h4>
+          <p class="text-sm font-medium text-walnut-light">{{ experience.charge }}</p>
         </div>
+        <span class="inline-flex items-center self-start sm:self-auto px-3 py-1 bg-forge-raised text-walnut rounded-md text-xs font-bold border border-forge-hairline tracking-wider whitespace-nowrap">
+          {{ formatDate(experience.startTime) }} – {{ formatDate(experience.endTime) }}
+        </span>
       </div>
-    </div>
-    <div class="experience-card-body pb-[18px] px-[24px] bg-[#212121]">
-      <p class="experience-card-description text-white/70 text-justify italic">"{{experience.expDescription}}"</p>
+
+      <!-- Body: Summary and Bullet Points (Optimized line length < 75 chars) -->
+      <div class="space-y-3 max-w-md">
+        <p class="text-parchment-muted text-sm leading-relaxed italic">
+          "{{ experience.expDescription }}"
+        </p>
+
+        <ul *ngIf="experience.expDescriptionArr" class="space-y-2 text-xs sm:text-sm text-parchment-muted/90 list-none pl-0">
+          <li *ngFor="let responsibility of experience.expDescriptionArr" class="flex items-start gap-2">
+            <span class="text-walnut mt-1 text-xs">◆</span>
+            <span class="leading-relaxed">{{ responsibility }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Implemented Skills Pills -->
+      <div *ngIf="experience.implementedSkills && technologies" class="flex flex-wrap gap-1.5 mt-4 pt-3 border-t border-forge-hairline">
+        <span *ngFor="let skill of experience.implementedSkills" 
+              class="px-2.5 py-0.5 rounded text-[11px] font-medium bg-forge-raised text-parchment-muted border border-forge-hairline">
+          {{ technologies[skill]?.name || skill }}
+        </span>
+      </div>
+
     </div>
   </div>
+
 </div>

@@ -13,15 +13,18 @@ import { DataService } from './common/services/data.service';
 })
 export class LandingPageComponent implements OnInit, OnDestroy {
   DATA: any;
-  skills:any = [];
-  projects:Array<IProyect> = [];
-  idList:Array<any> = [];
-  idSelected:string = '';
+  skills: any = [];
+  projects: Array<IProyect> = [];
+  idList: Array<any> = [];
+  idSelected: string = '';
+  currentLanguage: Languages = Languages.HUNGARIAN;
   private unsubscribe$: Subject<void> = new Subject();
+
   constructor(
     private dataService: DataService,
-    private router:Router
-    ) {}
+    private router: Router
+  ) {}
+
   ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
@@ -29,7 +32,15 @@ export class LandingPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.router.navigate(['']);
-    this.loadConfig();
+    
+    // Figyeljük a nyelv változását
+    this.dataService.currentLanguage$
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((lang: Languages) => {
+        this.currentLanguage = lang;
+        this.loadConfig(lang);
+      });
+
     const sections = document.querySelectorAll('section');
 
     window.addEventListener('scroll', () => {
@@ -38,44 +49,27 @@ export class LandingPageComponent implements OnInit, OnDestroy {
         const rect = section.getBoundingClientRect();
         if (rect.top <= 100 && rect.bottom >= 0) {
           currentSectionId = section.id;
-          this.idSelected=section.id;
+          this.idSelected = section.id;
         }
       });
-
     });
   }
-  loadConfig() {
+
+  onSplashComplete(selectedLang: Languages): void {
+    this.loadConfig(selectedLang);
+  }
+
+  loadConfig(lang: Languages = this.currentLanguage): void {
     this.dataService
-      .getConfig(Languages.ENGLISH)
-      .pipe(
-        takeUntil(this.unsubscribe$)
-      )
-      .subscribe((val:any) => {
+      .getConfig(lang)
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((val: any) => {
         this.DATA = val;
-        IDS.forEach((val)=>{
-          try{
-            const element = document.getElementById(val);
-            this.idList.push(element);
-          }catch(e){
-            console.error(e);
-          }
-        })
         this.skills = val['skills'];
         this.projects = val['projects'];
       });
   }
 
-  private isInViewport(el:any) {
-    const rect = el.getBoundingClientRect();
-    return (
-        (rect.top >= 0 &&rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
-        // rect.left >= 0 &&
-        || (rect.top <= 0  && rect.bottom >= (window.innerHeight || document.documentElement.clientHeight))
-        // rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-  @HostListener('window:scroll',['event'])
-  onScroll(event:any){
-    
-  }
+  @HostListener('window:scroll', ['event'])
+  onScroll(event: any) {}
 }

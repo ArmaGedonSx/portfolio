@@ -1,0 +1,124 @@
+{
+  "title": "Bán János",
+  "subtitle": "Medior Full-Stack & Hibrid Mobil Mérnök",
+  "navBar": {
+    "about": "Rólam",
+    "skills": "Készségek",
+    "projects": "Projektek",
+    "experience": "Tapasztalat",
+    "contact": "Kapcsolat"
+  },
+  "about": "Szia, <strong class=\"high-light\">Bán János</strong> vagyok, Medior Full-Stack és Hibrid Mobil Mérnök. Fő szakterületem az <strong class=\"high-light\">Angular</strong> (17-21, standalone komponensek, reaktív Signals állapotkezelés), a szigorú típusbiztos <strong class=\"high-light\">TypeScript</strong>, valamint az offline-first <strong class=\"high-light\">Ionic és Apache Cordova</strong> mobil architektúrák. <br><br>Az Inclouded kötelékében összetett projekteken vettem részt: orvosi IoT telemedicina hubok, nagy teljesítményű böngészős poligon-annotátorok és terepi diagnosztikai mobilalkalmazások tervezésében és megvalósításában.",
+  "skills": {
+    "languajes": [
+      "typescript",
+      "javascript",
+      "html",
+      "css",
+      "sass",
+      "node"
+    ],
+    "frameworks": [
+      "angular",
+      "ionic",
+      "cordova",
+      "rxjs",
+      "signals",
+      "bootstrap"
+    ],
+    "tools": [
+      "firebase",
+      "docker",
+      "git",
+      "withings",
+      "polar",
+      "wcag",
+      "postman",
+      "figma",
+      "linux",
+      "gsap"
+    ]
+  },
+  "projects": [
+    {
+      "projectName": "Összekapcsolt Egészségügyi Adatplatform",
+      "projectURL": "#",
+      "githubRepository": "https://github.com",
+      "description": "Klinikai és IoT telemedicina hub külső orvosi és okoseszközök (Withings, Polar API) szinkronizációjával, OTP hitelesítéssel és európai régiójú Firebase Cloud Functions háttérrel.",
+      "previewImg": "GenReports-Tkambio.jpg"
+    },
+    {
+      "projectName": "Nagy Teljesítményű Videó- és Poligon-annotátor",
+      "projectURL": "#",
+      "githubRepository": "https://github.com",
+      "description": "Ipari számítógépes látás és annotációs rendszer valós idejű Canvas felülettel, zoom/pan transzformációkkal, HLS stream lejátszással és S3/B2 pre-signed URL eléréssel.",
+      "previewImg": "E-GO.jpg"
+    },
+    {
+      "projectName": "Terepi Mobil Diagnosztikai Rendszer",
+      "projectURL": "#",
+      "githubRepository": "https://github.com",
+      "description": "Offline-first Ionic és Apache Cordova mobilalkalmazás egyedi hardveres Camera Preview modullal, automatizált iOS build pipeline-nal és lokális cache-eléssel.",
+      "previewImg": "Portal2Enviroment.jpg"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Inclouded",
+      "companyIcon": "/assets/img/inclouded-logo.svg",
+      "charge": "Medior Full-Stack & Hibrid Mobil Fejlesztő",
+      "expDescription": "Orvosi IoT telemedicina rendszerek, ipari videó- és poligon-annotátorok, valamint terepi diagnosztikai mobilalkalmazások fejlesztése.",
+      "expDescriptionArr": [
+        "Angular 21 standalone komponensek és reaktív Signals állapotkezelés bevezetése",
+        "Európai régióba optimalizált Firebase Cloud Functions backend és Firestore security rules kezelése",
+        "Ionic & Apache Cordova alapú offline-first mobilapp fejlesztése egyedi Camera Preview hardveres pluginnal",
+        "Withings és Polar API külső telemetriai adatfolyamok aszinkron integrációja"
+      ],
+      "startTime": "01-2024",
+      "endTime": "Jelenleg",
+      "implementedSkills": [
+        "angular",
+        "typescript",
+        "ionic",
+        "firebase",
+        "node",
+        "git",
+        "css"
+      ]
+    },
+    {
+      "company": "Szakmai Projektek & Alapkutatás",
+      "companyIcon": "/assets/img/research-logo.svg",
+      "charge": "Szoftverfejlesztő & Architektúra Fókusz",
+      "expDescription": "Típusbiztos webes és mobil architektúrák kidolgozása, Firebase backend és UI teljesítmény-optimalizálás.",
+      "expDescriptionArr": [
+        "Típusbiztos adatmodellek és DTO interfészek tervezése Firestore dokumentumokhoz",
+        "Aszinkron adatfolyamok és versenyhelyzet-mentes tranzakciók kezelése",
+        "Akadálymentességi (WCAG 2.2 AA) és UI renderelés-optimalizálás",
+        "Automatizált mobil build és tesztelési folyamatok"
+      ],
+      "startTime": "01-2023",
+      "endTime": "12-2023",
+      "implementedSkills": [
+        "typescript",
+        "angular",
+        "firebase",
+        "node",
+        "git"
+      ]
+    }
+  ],
+  "philosophy": {
+    "badge": "Mérnöki Szemlélet",
+    "quote": "A jó szoftver nem dísz —",
+    "highlight": "megbízható, gyors és működik."
+  },
+  "contact": {
+    "title": "Kapcsolat",
+    "subtitle": "Keress bizalommal új projektek vagy együttműködés kapcsán:",
+    "github": "https://github.com",
+    "linkedin": "https://linkedin.com",
+    "correo": "ban.jani2011@gmail.com",
+    "location": "Szeged, Magyarország"
+  }
+}

@@ -4,6 +4,6 @@ export const environment = {
   config: '/assets/config',
   logosPath: '/assets/img/logos/',
   iconPath: '/assets/img/icons/',
+  hungarian: '/hungarian.config.json',
   english: '/english.config.json',
-  spanish: '/spanish.config.json',
 };

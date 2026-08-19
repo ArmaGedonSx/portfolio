@@ -1,19 +1,21 @@
 <div class="skill-section-container relative flex">
-  <div [id]="'tree-separator-primary-' + sectionIndex" class="tree-separator-primary hidden lg:block border-b-4 border-[#9e8857] h-[24px]"></div>
+  <div [id]="'tree-separator-primary-' + sectionIndex" class="tree-separator-primary hidden lg:block border-b-2 border-walnut h-[24px]"></div>
   <div class="">
     <div class="content-start relative w-fit">
-      <div [id]="'tree-separator-title-' + sectionIndex" class=" tree-separator-title border-double border-b-4 border-l-0 lg:border-l-4 border-[#9e8857] absolute w-[100%] h-[22px] top-[6px] lg:top-[24px] left-[0px] lg:left-[-4px]"></div>
-      <h3 [id]="'skill-section-title-' + sectionIndex" class="text-white/80 text-xl lg:text-4xl uppercase w-fit ms-3">{{ title }}</h3>
+      <div [id]="'tree-separator-title-' + sectionIndex" class="tree-separator-title border-b-2 border-l-0 lg:border-l-2 border-walnut absolute w-[100%] h-[22px] top-[6px] lg:top-[24px] left-[0px] lg:left-[-4px]"></div>
+      <h3 [id]="'skill-section-title-' + sectionIndex" class="text-parchment-ink text-xl lg:text-3xl uppercase w-fit ms-3 tracking-wider font-bold">{{ title }}</h3>
     </div>
     <div class="skills-technologies-container relative flex flex-row ps-[10px] lg:ps-[75px] pt-[10px] lg:pt-[40px]">
-      <div [id]="'tree-separator-secondary-' + sectionIndex" class="tree-separator-secondary relative h-[40px] lg:h-[70px] top-[-10px] lg:top-[-35px] border-b-4 border-l-4 border-[#9e8857]"></div>
+      <div [id]="'tree-separator-secondary-' + sectionIndex" class="tree-separator-secondary relative h-[40px] lg:h-[70px] top-[-10px] lg:top-[-35px] border-b-2 border-l-2 border-walnut"></div>
       <div [id]="'skill-tecnologies-' + sectionIndex" class="skill-tecnologies">
-          <div *ngIf="technologies && skills" class="grid grid-cols-6 lg:grid-flow-col gap-5 border border-4 border-[#9e8857] border-double px-5 py-2">
-            <div class="col-span-1 content-center skill-tecnologie" [id]="'skill-card-' + sectionIndex + '-' + i" *ngFor="let keySkill of skills; let i = index">
-              <app-skill-card [skillName]="technologies[keySkill]?.name"
-                              [skillSVG]="technologies[keySkill].logoImg"
-                              [urlSkill]="technologies[keySkill].organizationUrl"></app-skill-card>
-            </div>
+          <div *ngIf="technologies && skills" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-flow-col gap-4 border border-2 border-walnut/60 bg-forge-surface/40 backdrop-blur-sm rounded-lg px-6 py-4">
+            <ng-container *ngFor="let keySkill of skills; let i = index">
+              <div *ngIf="technologies[keySkill]" class="col-span-1 content-center skill-tecnologie" [id]="'skill-card-' + sectionIndex + '-' + i">
+                <app-skill-card [skillName]="technologies[keySkill]?.name"
+                                [skillSVG]="technologies[keySkill]?.logoImg"
+                                [urlSkill]="technologies[keySkill]?.organizationUrl"></app-skill-card>
+              </div>
+            </ng-container>
           </div>
       </div>
     </div>

@@ -1,180 +1,114 @@
 {
   "technologies": {
-    "angular":{
-      "name": "Angular",
-      "organizationUrl":"https://angular.io/",
-      "logoImg":"angular-logo.svg"
-    },
-    "react":{
-      "name": "React",
-      "organizationUrl":"https://es.reactjs.org/",
-      "logoImg":"react-logo.svg"
-    },
-    "javascript":{
-      "name": "JavaScript",
-      "organizationUrl":"https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-      "logoImg":"javascript-logo.svg"
-    },
-    "css":{
-      "name": "SCSS/CSS",
-      "organizationUrl":"https://developer.mozilla.org/en-US/docs/Web/CSS",
-      "logoImg":"css-logo.svg"
-    },
-    "python":{
-      "name": "Python",
-      "organizationUrl":"https://www.python.org/",
-      "logoImg":"python-logo.svg"
-    },
-    "django":{
-      "name": "Django",
-      "organizationUrl":"https://www.djangoproject.com/",
-      "logoImg":"django-logo.svg"
-    },
-    "linux":{
-      "name": "Linux",
-      "organizationUrl":"https://www.linux.org/",
-      "logoImg":"linux-logo.svg"
-    },
-    "html":{
-      "name": "HTML/HTML5",
-      "organizationUrl":"https://developer.mozilla.org/en-US/docs/Web/HTML",
-      "logoImg":"html-logo.svg"
-    },
-    "photoshop":{
-      "name": "Photoshop",
-      "organizationUrl":"https://www.adobe.com/pe/products/photoshop.html",
-      "logoImg":"photoshop-logo.svg"
-    },
-    "springBoot": {
-      "name": "Spring Boot",
-      "organizationUrl":"https://spring.io/projects/spring-boot",
-      "logoImg":"spring-logo.svg"
-    },
-    "bootstrap":{
-      "name": "Bootstrap",
-      "organizationUrl":"https://getbootstrap.com/",
-      "logoImg":"bootstrap-logo.svg"
-    },
-    "typescript":{
+    "typescript": {
       "name": "TypeScript",
-      "organizationUrl":"https://www.typescriptlang.org/",
-      "logoImg":"typescript-logo.svg"
+      "organizationUrl": "https://www.typescriptlang.org/",
+      "logoImg": "typescript-logo.svg"
     },
-    "git":{
+    "javascript": {
+      "name": "JavaScript",
+      "organizationUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "logoImg": "javascript-logo.svg"
+    },
+    "html": {
+      "name": "HTML5",
+      "organizationUrl": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      "logoImg": "html-logo.svg"
+    },
+    "css": {
+      "name": "CSS3",
+      "organizationUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      "logoImg": "css-logo.svg"
+    },
+    "sass": {
+      "name": "SCSS / Sass",
+      "organizationUrl": "https://sass-lang.com/",
+      "logoImg": "sass-logo.png"
+    },
+    "node": {
+      "name": "Node.js",
+      "organizationUrl": "https://nodejs.org/",
+      "logoImg": "node-js-icon.svg"
+    },
+    "angular": {
+      "name": "Angular 21",
+      "organizationUrl": "https://angular.dev/",
+      "logoImg": "angular-logo.svg"
+    },
+    "ionic": {
+      "name": "Ionic",
+      "organizationUrl": "https://ionicframework.com/",
+      "logoImg": "ionic-logo.svg"
+    },
+    "cordova": {
+      "name": "Cordova",
+      "organizationUrl": "https://cordova.apache.org/",
+      "logoImg": "cordova-logo.svg"
+    },
+    "rxjs": {
+      "name": "RxJS",
+      "organizationUrl": "https://rxjs.dev/",
+      "logoImg": "rxjs-logo.svg"
+    },
+    "signals": {
+      "name": "Signals",
+      "organizationUrl": "https://angular.dev/guide/signals",
+      "logoImg": "signals-logo.svg"
+    },
+    "bootstrap": {
+      "name": "Bootstrap",
+      "organizationUrl": "https://getbootstrap.com/",
+      "logoImg": "bootstrap-logo.svg"
+    },
+    "firebase": {
+      "name": "Firebase",
+      "organizationUrl": "https://firebase.google.com/",
+      "logoImg": "firebase.png"
+    },
+    "docker": {
+      "name": "Docker",
+      "organizationUrl": "https://www.docker.com/",
+      "logoImg": "docker.png"
+    },
+    "git": {
       "name": "Git",
       "organizationUrl": "https://git-scm.com/",
-      "logoImg":"git-logo.svg"
+      "logoImg": "git-logo.svg"
     },
-    "graphql":{
-      "name": "Graphql",
-      "organizationUrl": "https://graphql.org/",
-      "logoImg":"graphql-logo.svg"
-    },
-    "figma":{
-      "name": "Figma",
-      "organizationUrl": "https://www.figma.com",
-      "logoImg":"figma-logo.svg"
-    },
-    "invision":{
-      "name": "InVision",
-      "organizationUrl": "https://www.invisionapp.com/",
-      "logoImg":"invision-logo.svg"
-    },
-    "stenciljs":{
-      "name": "StencilJS",
-      "organizationUrl": "https://stenciljs.com/",
-      "logoImg":"stencil-logo.svg"
-    },
-    "npm":{
-      "name": "npm",
-      "organizationUrl": "https://www.npmjs.com/",
-      "logoImg":"npm-logo.svg"
-    },
-    "vite":{
-      "name": "Vite",
-      "organizationUrl": "https://vitejs.dev/",
-      "logoImg":"vite-logo.svg"
-    },
-    "vue":{
-      "name": "VueJS",
-      "organizationUrl": "https://vuejs.org/",
-      "logoImg":"vuejs-logo.svg"
-    },
-    "wordpress":{
-      "name": "WordPress",
-      "organizationUrl": "https://wordpress.org/",
-      "logoImg":"wordpress-logo.svg"
-    },
-    "php":{
-      "name": "PHP",
-      "organizationUrl": "https://www.php.net/",
-      "logoImg":"php-logo.svg"
-    },
-    "sass":{
-      "name": "Sass",
-      "organizationUrl": "https://sass-lang.com/",
-      "logoImg":"sass-logo.png"
-    },
-    "c#":{
-      "name": "C#",
-      "organizationUrl": "https://dotnet.microsoft.com/en-us/languages/csharp",
-      "logoImg":"Logo_C_sharp.svg"
-    },
-    "docker":{
-      "name": "Docker",
-      "organizationUrl": "https://nodejs.org/en",
-      "logoImg":"docker.png"
-    },
-    "express":{
-      "name": "Express",
-      "organizationUrl": "https://nodejs.org/en",
-      "logoImg":"express.png"
-    },
-    "firebase":{
-      "name": "Firebase",
-      "organizationUrl": "https://nodejs.org/en",
-      "logoImg":"firebase.png"
-    },
-    "gsap":{
-      "name": "GSAP",
-      "organizationUrl": "https://nodejs.org/en",
-      "logoImg":"gsap.png"
-    },
-    "jest":{
-      "name": "Jest",
-      "organizationUrl": "https://nodejs.org/en",
-      "logoImg":"jest.png"
-    },
-    "nginx":{
-      "name": "Nginx",
-      "organizationUrl": "https://nodejs.org/en",
-      "logoImg":"nginx.png"
-    },
-    "nuxt":{
-      "name": "Nuxt",
-      "organizationUrl": "https://nodejs.org/en",
-      "logoImg":"nuxt.png"
-    },
-    "postman":{
+    "postman": {
       "name": "Postman",
-      "organizationUrl": "https://nodejs.org/en",
-      "logoImg":"postman.png"
+      "organizationUrl": "https://www.postman.com/",
+      "logoImg": "postman.png"
     },
-    "swagger":{
-      "name": "Swagger",
-      "organizationUrl": "https://nodejs.org/en",
-      "logoImg":"swagger.png"
+    "figma": {
+      "name": "Figma",
+      "organizationUrl": "https://www.figma.com/",
+      "logoImg": "figma-logo.svg"
     },
-    "ubuntu":{
-      "name": "Ubuntu",
-      "organizationUrl": "https://nodejs.org/en",
-      "logoImg":"ubuntu.png"
+    "linux": {
+      "name": "Linux",
+      "organizationUrl": "https://www.linux.org/",
+      "logoImg": "linux-logo.svg"
     },
-    "node":{
-      "name": "NodeJS",
-      "organizationUrl": "https://nodejs.org/en",
-      "logoImg":"node-js-icon.svg"
+    "gsap": {
+      "name": "GSAP",
+      "organizationUrl": "https://greensock.com/gsap/",
+      "logoImg": "gsap.png"
+    },
+    "withings": {
+      "name": "Withings API",
+      "organizationUrl": "https://developer.withings.com/",
+      "logoImg": "withings-logo.svg"
+    },
+    "polar": {
+      "name": "Polar API",
+      "organizationUrl": "https://developer.polar.com/",
+      "logoImg": "polar-logo.svg"
+    },
+    "wcag": {
+      "name": "WCAG 2.2",
+      "organizationUrl": "https://www.w3.org/WAI/standards-guidelines/wcag/",
+      "logoImg": "wcag-logo.svg"
     }
-    
   }
 }

@@ -2,125 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
-@import './assets/styles/media';
-@import './assets/styles/breakpoint';
-@import './assets/styles/fonts';
 @import './assets/styles/color-variables.scss';
-@import './assets/styles/navbar.scss';
+@import './assets/styles/_fonts.scss';
+@import './assets/styles/_media.scss';
+@import './assets/styles/_breakpoint.scss';
 @import './assets/styles/home.scss';
 @import './assets/styles/about.scss';
 @import './assets/styles/skills.scss';
 @import './assets/styles/proyects.scss';
 @import './assets/styles/experiences.scss';
 @import './assets/styles/contact.scss';
+@import './assets/styles/navbar.scss';
 
-@theme {  
-  --breakpoint-3xl: 112rem;
-  --breakpoint-4xl: 128rem;
-}
+$viewHeight: 100vh;
 
-html, body{
-  overflow-x: hidden;
-  overflow-y: auto;
-
-}
-
-body{
-  margin: 0;
-  font-family: "Inter", sans-serif;
+html {
   background-color: $color-background;
-  overflow-x: hidden;
-  position: relative;
+  scroll-behavior: auto;
 }
-h1,h2,h3,h4,h5{
-  letter-spacing:2px;
-}
-h1,h2,h3,h4,p{
+
+body {
   margin: 0px;
-  padding: 0px;
-  color: $color-white;
-
-}
-a{
-  color: #9e6857d6;
-  &:hover{
-    color: #576d9e;
-  }
-  &:active{
-    color: #576d9e;
-  }
-}
-h1{
-  font-weight: bolder;
-  font-size: 4em;
-  @include lg{
-    font-size: 2em;
-  }
-}
-h2{
-  font-size: 24px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: white;
-  @include lg{
-    font-size: 18px;
-  }
-}
-h3{
-  font-size: 36px;
-  font-weight: bold;
-  @include lg{
-    font-size: 24px;
-  }
-}
-h4{
-  font-size:large;
-  @include lg{
-    font-size: medium;
-  }
+  background-color: $color-background;
+  color: $color-gray-light;
+  overflow-x: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
-app-landing-page{
-  width: 100%;
-  height:fit-content;
+.inter-500 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
 }
 
-button{
+.monoton-regular {
+  font-family: "Monoton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.05em;
+}
+
+.btn-primary {
+  background-color: $color-gold;
+  color: #131313;
+  font-weight: 700;
+  border-radius: 6px;
   border: none;
-  border-radius: 0px;
-  color: rgba(0, 0, 0, 0.761);
-  background-color: #9e8857;
-  padding-block: 7px;
-  padding-inline: 20px;
-  font-family: Poppins;
-  font-weight: bold;
-  font-size: small;
+  padding: 12px 28px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.25s ease, transform 0.2s ease;
 
-  &:hover{
-    cursor: pointer;
-    background-color: #9e6857;
-    color: rgba(255, 255, 255, 0.718);
+  &:hover {
+    background-color: $color-gold-light;
+    transform: translateY(-1px);
   }
-  &:active{
-    // cursor:default;
-    color: $color-gray;
-    background-color: $color-blue-dark;
+  &:active {
+    transform: translateY(0);
+    background-color: $color-gold-dark;
   }
-  @include lg{
-    font-size: medium;
+  @include lg {
+    font-size: 15px;
   }
 }
 
-#home{
-  border: 4px solid #9e8857;
-  border-top: 0px;
-  border-right: 0px;
-  border-bottom: 0px;
+#home {
   padding-inline: 24px;
 }
-#skills{
+
+#skills {
   padding-inline: 24px;
 }
-#projects{
+
+#projects {
   position: relative;
+}
+
+.floating-dock-btn {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  text-decoration: none !important;
+  cursor: pointer;
 }

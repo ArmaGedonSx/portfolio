@@ -1,5 +1,8 @@
 <div class="skill-card">
-  <a href="{{urlSkill}}" target="_blank">
-    <img class="h-[100%] w-[25px] lg:w-[50px] max-w-[25px] lg:max-w-[50px] max-h-[25px] lg:max-h-[50px]" [src]="logosPath+skillSVG" alt="{{skillName}}">
+  <a [href]="urlSkill" target="_blank" [title]="skillName" class="block p-1 rounded-lg hover:bg-forge-raised/50 transition-colors">
+    <img class="h-[100%] w-[28px] lg:w-[48px] max-w-[28px] lg:max-w-[48px] max-h-[28px] lg:max-h-[48px] object-contain opacity-80 hover:opacity-100 transition-opacity" 
+         [src]="logosPath+skillSVG" 
+         [alt]="skillName"
+         [title]="skillName">
   </a>
 </div>

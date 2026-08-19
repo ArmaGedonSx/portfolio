@@ -1,9 +1,8 @@
 import { IExperienceInfo } from './../common/interfaces/experience-information';
-import { Component, Input, OnInit, AfterViewInit, OnDestroy, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit, OnDestroy, ElementRef } from '@angular/core';
 import { DataService } from '../common/services/data.service';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Typed from 'typed.js';
 
 @Component({
   selector: 'app-experiences',
@@ -11,14 +10,12 @@ import Typed from 'typed.js';
   styleUrls: ['./experiences.component.scss']
 })
 export class ExperiencesComponent implements OnInit, AfterViewInit, OnDestroy {
-  @Input() experiences!:Array<IExperienceInfo>;
-  @Output() experiencesLoaded = new EventEmitter<boolean>();
-  technologies!:any;
+  @Input() experiences!: Array<IExperienceInfo>;
+  technologies!: any;
   masterTimeline?: gsap.core.Timeline;
-  private typed: Typed | null = null;
 
   constructor(
-    private dataService:DataService,
+    private dataService: DataService,
     private elementRef: ElementRef
   ) {
     gsap.registerPlugin(ScrollTrigger);
@@ -31,21 +28,18 @@ export class ExperiencesComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     setTimeout(() => {
       this.setupAnimations();
-      this.experiencesLoaded.emit(true);
-    }, 100);
+    }, 150);
   }
 
   ngOnDestroy(): void {
-    if (this.typed) {
-      this.typed.destroy();
-    }
     if (this.masterTimeline) {
       this.masterTimeline.kill();
     }
   }
-  getTechnologies(){
+
+  getTechnologies(): void {
     this.dataService.getTecnologies()
-      .subscribe((val:any)=>{
+      .subscribe((val: any) => {
         this.technologies = val.technologies;
       });
   }
@@ -53,118 +47,58 @@ export class ExperiencesComponent implements OnInit, AfterViewInit, OnDestroy {
   setupAnimations(): void {
     const element = this.elementRef.nativeElement;
 
-    // Timeline maestro para experiences
-    this.masterTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: element.querySelector('#experiences-container'),
-        start: 'top 80%',
-        end: 'bottom 50%',
-        scrub: 1,
-        markers: false
+    // 1. Felső összekötő vonal lefolyása
+    gsap.fromTo(
+      element.querySelector('#experiences-border-top'),
+      { scaleY: 0, transformOrigin: 'top center' },
+      {
+        scaleY: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: element.querySelector('#experiences-container'),
+          start: 'top 85%',
+          end: 'top 60%',
+          scrub: 0.4,
+          markers: false
+        }
       }
+    );
+
+    // 2. Középső hosszú timeline tengely folyamatos lefolyása görgetésre
+    gsap.fromTo(
+      element.querySelector('#line-experiences-list'),
+      { scaleY: 0, transformOrigin: 'top center' },
+      {
+        scaleY: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: element.querySelector('.experiences-timeline-wrapper'),
+          start: 'top 75%',
+          end: 'bottom 60%',
+          scrub: 0.4,
+          markers: false
+        }
+      }
+    );
+
+    // 3. Kártyák és csomópontok finom megjelenése ahogy a vonal eléri őket
+    const rows = element.querySelectorAll('.experience-row');
+    rows.forEach((row: HTMLElement) => {
+      gsap.fromTo(
+        row,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: row,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
     });
-
-    const duration = 1;
-
-    // 1. Animación del borde superior vertical
-    this.masterTimeline.fromTo(
-      '#experiences-border-top',
-      { scaleY: 0, transformOrigin: 'top center' },
-      {
-        scaleY: 1,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '#experiences-border-top',
-          start: 'top 70%',
-          end: 'bottom 40%',
-          scrub: 1,
-          markers: false
-        }
-      }
-    );
-    // 5. Animación de la línea central vertical
-    // Usar el grid como referencia para el trigger ya que tiene altura real
-    this.masterTimeline.fromTo(
-      '.line-experiences-list',
-      { scaleY: 0, transformOrigin: 'top center' },
-      {
-        scaleY: 1,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.experiences-list-grid', // Usar el grid como trigger
-          start: 'top 70%',
-          end: 'bottom 20%',
-          scrub: 1,
-          markers: false
-        }
-      },
-    );
-
-    // 2. Animación del borde inferior izquierdo del título
-    
-
-    // 3. Animación del borde superior derecho del título
-    this.masterTimeline.fromTo(
-      '#experiences-border-2',
-      { scaleX: 0, transformOrigin: 'right center' },
-      { scaleX: 1, duration: duration * 0.8,
-        scrollTrigger: {
-          trigger: '#experiences-border-2',
-          start: 'top 60%',
-          end: 'top 55%',
-          scrub: 1,
-          markers: false
-        } 
-        
-      },
-    );
-
-    this.masterTimeline.fromTo(
-      '#experiences-border-1',
-      { scaleX: 0, transformOrigin: 'left center' },
-      { scaleX: 1, duration: duration * 0.8, scrollTrigger: {
-          trigger: '.experiences-title',
-          start: 'top 60%',
-          end: 'top 55%',
-          scrub: 1,
-          markers: false
-        } 
-      },
-    );
-
-    // 4. Fade in del título con efecto typed
-    this.masterTimeline.fromTo(
-      '#experiences-title',
-      { opacity: 0 },
-      { opacity: 1, duration: duration * 0.5, 
-        scrollTrigger: {
-          trigger: '#experiences-title',
-          start: 'top 60%',
-          end: 'top 40%',
-          scrub: 1,
-          markers: false
-        }  
-      },
-    );
-
-    // 6. Animación de cada experiencia con stagger
-    if (this.experiences && this.experiences.length > 0) {
-      this.experiences.forEach((_, i) => {
-        this.masterTimeline!.fromTo(
-          `#experience-card-${i}`,
-          { opacity: 0, x: i % 2 === 0 ? 50 : -50 },
-          { opacity: 1, x: 0, duration: duration * 0.6, 
-            scrollTrigger: {
-              trigger: `#experience-card-${i}`,
-              start: 'top 70%',
-              end: 'top 40%',
-              scrub: 1,
-              markers: false
-            } 
-          },
-        );
-      });
-    }
   }
-
 }

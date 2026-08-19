@@ -1,156 +1,93 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
 
-  title:string ='Daniel!';
-  subtitle:string ='<Web Developer/>';
-  intervalTimer:number = 250;
-  wordSelected:Boolean = true;
-  titleRoulete:Array<string> = [
-    'Daniel!',
-    'FrontEnd!',
-    'Daniel!',
-    'BackEnd!',
-    'Daniel!',
+  title: string = 'János!';
+  subtitle: string = '<Full-Stack & Mobile Developer/>';
+  intervalTimer: number = 100;
+  wordSelected: boolean = true;
+  titleRoulete: Array<string> = [
+    'János!',
     'FullStack!',
-    'Daniel!',
-    'Koinu!',
-  ]; 
-  
-  constructor() { 
-    gsap.registerPlugin(ScrollTrigger);
-  }
+    'Angular 21!',
+    'TypeScript!',
+    'Ionic & Mobile!',
+    'Firebase!',
+    'Bán János!'
+  ];
+
+  constructor() {}
 
   ngOnInit(): void {
-    if(this.isMobile()) {
+    if (this.isMobile()) {
       this.titleRoulete = [
-        'Daniel!',
-        'FrontEnd!',
-        'Daniel!',
-        'BackEnd!',
-        'Daniel!',
+        'János!',
         'FullStack!',
-        'Daniel!',
-        'Koinu!',
+        'Angular!',
+        'Mobile!',
+        'Firebase!'
       ];
     }
     this.cicleTitle();
   }
 
-  ngAfterViewInit(): void {
-    this.setupScrollAnimations();
-  }
-
-  private setupScrollAnimations(): void {
-    gsap.to('.home-banner-title', {
-      opacity: 0,
-      y: -100,
-      x: 40,
-      scrollTrigger: {
-        trigger: '.home-container',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1,
-        markers: false // Cambia a true para debug
-      }
-    });
-
-    gsap.to('.col-span', {
-      opacity: 0,
-      y: -80,
-      x: -40,
-      scrollTrigger: {
-        trigger: '.home-container',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1
-      }
-    });
-    gsap.to('.home-subtitle', {
-      opacity: 0,
-      y: -80,
-      x: 40,
-      scrollTrigger: {
-        trigger: '.home-container',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1
-      }
-    });
-
-    gsap.to('button', {
-      opacity: 0,
-      y: -80,
-      x: 40,
-
-      scrollTrigger: {
-        trigger: '.home-container',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1
-      }
-    });
-  }
   isMobile(): boolean {
     return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   }
 
-  async cicleTitle():Promise<void> {
-    while(true){
+  async cicleTitle(): Promise<void> {
+    while (true) {
       const currentTitle = this.title;
-      const response = await this.cleanTitle();
+      await this.cleanTitle();
       let randomIndex = Math.floor(Math.random() * this.titleRoulete.length);
-      if(currentTitle === this.titleRoulete[randomIndex]) {
-        randomIndex = (randomIndex + 1) % this.titleRoulete.length; 
+      if (currentTitle === this.titleRoulete[randomIndex]) {
+        randomIndex = (randomIndex + 1) % this.titleRoulete.length;
       }
-      const response2 = await this.setTitle(this.titleRoulete[randomIndex]);
+      await this.setTitle(this.titleRoulete[randomIndex]);
     }
   }
 
-  async cleanTitle():Promise<boolean> {
+  async cleanTitle(): Promise<boolean> {
     return new Promise<boolean>((resolve) => {
       this.wordSelected = true;
       setTimeout(async () => {
-        this.wordSelected = false;        
+        this.wordSelected = false;
         resolve(await this.deleteTitle());
-      }
-      ,this.intervalTimer * 10);
+      }, 1600);
     });
   }
-  setTitle(title:string):Promise<boolean> {
-    
+
+  setTitle(title: string): Promise<boolean> {
     return new Promise<boolean>((resolve) => {
+      let charIndex = 0;
       const setTitleInterval = setInterval(() => {
-        // agregar una letra en cada intervalo de tiempo
-        if(this.title.length < title.length) {
-          this.title += title[this.title.length];
+        if (this.title.length < title.length) {
+          this.title += title[charIndex];
+          charIndex++;
         } else {
           this.title = title;
           clearInterval(setTitleInterval);
           resolve(true);
         }
-      },this.intervalTimer);
+      }, this.intervalTimer);
     });
   }
-  deleteTitle():Promise<boolean> {
-    
+
+  deleteTitle(): Promise<boolean> {
     return new Promise<boolean>((resolve) => {
-      const setTitleInterval = setInterval(() => {
-        // eliminar la última letra en cada intervalo de tiempo
-        if(this.title.length != 0) {
+      const deleteInterval = setInterval(() => {
+        if (this.title.length !== 0) {
           this.title = this.title.slice(0, -1);
         } else {
-          clearInterval(setTitleInterval);
-          resolve(true);
+          clearInterval(deleteInterval);
+          setTimeout(() => resolve(true), 250);
         }
-      },this.intervalTimer/3);
+      }, 40);
     });
   }
 }

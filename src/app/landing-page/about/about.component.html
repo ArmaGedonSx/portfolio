@@ -1,41 +1,38 @@
-<div class="about-card flex justify-center items-center relative">
-  <div class="borde-about-card h-full absolute border-[#9e8857] border-r-4 left-0"></div>
-  <div class="grid grid-cols-12 h-[600px]">
-    <div class="profile-photo col-span-12 lg:col-span-6 flex justify-center items-start">
-      <div class="about-img relative">
-        <!-- Bordes animados de la foto -->
-        <div class="line-decoration-top absolute border-[#9e8857] top-[10px] left-[10px] w-full border-t-2 "></div>
-        <div class="line-decoration-left absolute border-[#9e8857] top-[10px] left-[10px] h-full w-full  border-l-2 ">
+<div class="about-card flex justify-center items-center relative py-12 px-6">
+  <div class="max-w-5xl mx-auto w-full">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12 items-center">
+      
+      <!-- Bal oszlop: Kép helye (Elegáns, arányos keret) -->
+      <div class="col-span-12 lg:col-span-5 flex justify-center lg:justify-end">
+        <div class="relative size-64 sm:size-72 lg:size-80 rounded-2xl bg-forge-surface border-2 border-walnut/40 flex flex-col items-center justify-center p-6 shadow-2xl shadow-black/60 overflow-hidden group">
+          <!-- Finom belső díszítés és monogram kódjelvény -->
+          <div class="size-20 rounded-full bg-forge-raised border border-walnut/30 flex items-center justify-center mb-3 shadow-inner">
+            <span class="monoton-regular text-2xl text-walnut">JB</span>
+          </div>
+          <span class="text-xs text-parchment-muted uppercase tracking-widest font-mono">Bán János</span>
+          <span class="text-[10px] text-walnut/70 uppercase tracking-wider mt-1">Full-Stack & Mobile</span>
         </div>
-        <div
-          class="line-decoration-bottom absolute border-[#9e8857] bottom-[-10px] left-[10px] w-full h-full border-b-2 ">
-        </div>
-        <div
-          class="line-decoration-right absolute border-[#9e8857] top-[10px] right-[-10px] w-full  h-full border-r-2 ">
-        </div>
-        <img class="" src="/assets/img/about-photo2.jpg" alt="about photo">
       </div>
-    </div>
-    <div class="about-subtitle col-span-12 lg:col-span-6 flex items-end justify-center">
-      <div class="about-info px-9 lg:px-0">
-        <h2 class="text-[#9e8857] monoton-regular text-2xl lg:text-5xl">
+
+      <!-- Jobb oszlop: Szöveges tartalom -->
+      <div class="col-span-12 lg:col-span-7 flex flex-col items-start text-left">
+        <!-- Címsor badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-forge-surface border border-walnut/30 text-[11px] text-walnut uppercase tracking-[0.25em] font-semibold mb-4 shadow-md">
+          <span class="size-1.5 rounded-full bg-walnut animate-pulse"></span>
+          <span>Rólam & Szemlélet</span>
+        </div>
+
+        <!-- Főcím -->
+        <h2 class="text-walnut monoton-regular text-2xl sm:text-3xl lg:text-4xl mb-4 tracking-wide">
           <span class="typed-text"></span>
         </h2>
-        <p class="about-message font-light text-white/60">
-          My name is Daniel, I'm a developer who likes challenges. As a <strong class="text-[#9e8857]">Systems Engineer</strong> and
-          <strong class="text-[#9e8857]">Fullstack Developer</strong>, I specialize in creating fast and scalable web
-          applications applying the best <strong class="text-[#9e8857]">Back-End</strong> technologies with modern
-          <strong class="text-[#9e8857]">Front-End</strong> interfaces. <br> <br>
-          I've been working with various startups and companies developing applications, performing optimizations, and
-          refactoring projects.
-          My philosophy is <strong class="text-[#9e8857]">Simplicity</strong> and <strong
-            class="text-[#9e8857]">Functionality</strong>. I strive to create scalable and simple applications capable
-          of solving complex problems.
-          <br><br>
-          <strong class="text-[#9e8857]">More</strong> is <strong class="text-[#9e8857]">Less</strong> and <strong
-            class="text-[#9e8857]">Less</strong> is <strong class="text-[#9e8857]">More</strong>...
-        </p>
+
+        <!-- Szövegtörzs -->
+        <div class="about-message font-normal text-parchment-muted leading-relaxed text-sm sm:text-base max-w-xl"
+             [innerHTML]="aboutMessage">
+        </div>
       </div>
+
     </div>
   </div>
 </div>

@@ -7,19 +7,25 @@ import { ParticlesOverlayComponent } from './particles-overlay/particles-overlay
 import { IntroSplashComponent } from './intro-splash/intro-splash.component';
 import { SkillSectionComponent } from './skill-section/skill-section.component';
 
-
-const components = [SkillCardComponent,ProyectCardComponent,ExperienceCardComponent,ParticlesOverlayComponent,IntroSplashComponent,SkillSectionComponent];
-
 @NgModule({
   declarations: [
-    ...components,
-    
+    SkillCardComponent,
+    ProyectCardComponent,
+    ExperienceCardComponent,
+    ParticlesOverlayComponent,
+    IntroSplashComponent,
+    SkillSectionComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    ...components
+    SkillCardComponent,
+    ProyectCardComponent,
+    ExperienceCardComponent,
+    ParticlesOverlayComponent,
+    IntroSplashComponent,
+    SkillSectionComponent
   ]
 })
 export class SharedComponentsModule { }

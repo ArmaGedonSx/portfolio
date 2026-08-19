@@ -1,22 +1,14 @@
-.skill-card{
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // margin: 5px;
+.skill-card {
   width: fit-content;
   align-self: center;
   justify-self: center;
-  img{
-    // height: 50px;
-    transition-property: transform;
-    transition-duration: 0.3s;
-    &:hover{
-      transform: scale(1.5);
-      // position: absolute;
-      // height: 70px;
+  
+  img {
+    transition: opacity 0.25s ease;
+    opacity: 0.85;
+    
+    &:hover {
+      opacity: 1;
     }
-  }
-  &:hover{
-    position: relative;
   }
 }
