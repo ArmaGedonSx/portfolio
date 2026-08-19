@@ -1,4 +1,4 @@
-<div class="intro-splash" *ngIf="isVisible">
+<div class="intro-splash" *ngIf="isVisible" (click)="skipSplash()">
     <div class="splash-bg">
         <div *ngFor="let col of columns; let i = index" class="splash-column" [attr.data-col]="i"></div>
     </div>
@@ -19,25 +19,45 @@
             </span>
         </p>
 
-        <!-- Finom, letisztult belépő csúszka nyelvválasztó gombok nélkül -->
+        <!-- Finom automatikus állapotjelző vonal (Subtle Accent Line) -->
+        <div class="intro-auto-bar mt-6">
+            <div class="intro-progress-line"></div>
+        </div>
+
+        <!-- ================================================================= -->
+        <!-- KÉSŐBBI HASZNÁLATRA MEGŐRZÖTT KÉZI CSÚSZKA ÉS NYELVVÁLASZTÓ (KOMMENTBEN) -->
+        <!-- ================================================================= -->
+        <!--
         <div class="intro-lang-card">
             
-            <!-- Finom, elegáns elhúzható sáv (Slide to Enter) -->
+            <div class="lang-switch-minimal">
+                <button type="button"
+                        (click)="selectLanguage(Languages.HUNGARIAN)"
+                        [class.active]="selectedLang === Languages.HUNGARIAN"
+                        class="lang-btn-subtle">
+                    MAGYAR
+                </button>
+                <span style="color: rgba(185, 135, 93, 0.4); font-size: 10px;">•</span>
+                <button type="button"
+                        (click)="selectLanguage(Languages.ENGLISH)"
+                        [class.active]="selectedLang === Languages.ENGLISH"
+                        class="lang-btn-subtle">
+                    ENGLISH
+                </button>
+            </div>
+
             <div #sliderTrack
                  class="slide-track"
                  (click)="onTrackClick($event)">
                 
-                <!-- Finom arany háttér-kitöltés -->
                 <div #sliderProgress
                      class="slide-progress"
                      style="width: 38px;"></div>
 
-                <!-- Felirat a csúszka közepén -->
                 <div #sliderText class="slide-text">
-                    <span>Húzd el a belépéshez →</span>
+                    <span>{{ selectedLang === Languages.HUNGARIAN ? 'Húzd el a belépéshez →' : 'Slide to explore →' }}</span>
                 </div>
 
-                <!-- Finom csúszó gomb -->
                 <div #sliderThumb
                      class="slide-knob"
                      (pointerdown)="onDragStart($event)">
@@ -51,11 +71,12 @@
                     </svg>
                 </div>
 
-                <!-- Célállomás diszkrét pont a jobb szélen -->
                 <div class="destination-icon">●</div>
 
             </div>
 
         </div>
+        -->
+
     </div>
 </div>
