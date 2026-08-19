@@ -10,7 +10,6 @@ import { SharedComponentsModule } from './common/components/shared-components.mo
 import { AboutComponent } from './about/about.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
-import { AppRoutingModule } from '../app-routing.module';
 import { ExperiencesComponent } from './experiences/experiences.component';
 import { ContactComponent } from './contact/contact.component';
 

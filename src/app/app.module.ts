@@ -5,8 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataService } from './landing-page/common/services/data.service';
-import { LandingPageModule } from './landing-page/landing-page.module';
-// import Aura from '@primeuix/themes/aura';
 
 @NgModule({
   declarations: [
@@ -15,7 +13,6 @@ import { LandingPageModule } from './landing-page/landing-page.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LandingPageModule,
     HttpClientModule
   ],
   providers: [DataService],
