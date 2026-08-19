@@ -1,18 +1,33 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
 # Compiled output
 /dist
 /tmp
 /out-tsc
 /bazel-out
 
-# Node
+# Node dependencies
 /node_modules
 npm-debug.log
 yarn-error.log
-.env
+package-lock.json.log
 
-# IDEs and editors
+# Angular & build caches
+/.angular
+/.angular/cache
+.sass-cache/
+
+# Firebase & Deployment caches
+/.firebase
+.firebaserc
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+
+# Environment & credentials
+.env
+.env.*
+!.env.example
+
+# IDEs & Editors
 .idea/
 .project
 .classpath
@@ -20,8 +35,6 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
-
-# Visual Studio Code
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -29,15 +42,11 @@ yarn-error.log
 !.vscode/extensions.json
 .history/*
 
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
-
-# System files
+# System & OS files
 .DS_Store
 Thumbs.db
+
+# Testing & Coverage
+/coverage
+testem.log
+/typings
