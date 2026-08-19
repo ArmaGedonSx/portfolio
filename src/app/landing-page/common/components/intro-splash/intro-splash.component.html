@@ -19,26 +19,9 @@
             </span>
         </p>
 
-        <!-- Finom, letisztult interaktív vezérlő -->
+        <!-- Finom, letisztult belépő csúszka nyelvválasztó gombok nélkül -->
         <div class="intro-lang-card">
             
-            <!-- Minimalista nyelvváltó (HU | EN) -->
-            <div class="lang-switch-minimal">
-                <button type="button"
-                        (click)="selectLanguage(Languages.HUNGARIAN)"
-                        [class.active]="selectedLang === Languages.HUNGARIAN"
-                        class="lang-btn-subtle">
-                    MAGYAR
-                </button>
-                <span style="color: rgba(185, 135, 93, 0.4); font-size: 10px; select-none">•</span>
-                <button type="button"
-                        (click)="selectLanguage(Languages.ENGLISH)"
-                        [class.active]="selectedLang === Languages.ENGLISH"
-                        class="lang-btn-subtle">
-                    ENGLISH
-                </button>
-            </div>
-
             <!-- Finom, elegáns elhúzható sáv (Slide to Enter) -->
             <div #sliderTrack
                  class="slide-track"
@@ -51,7 +34,7 @@
 
                 <!-- Felirat a csúszka közepén -->
                 <div #sliderText class="slide-text">
-                    <span>{{ selectedLang === Languages.HUNGARIAN ? 'Húzd el a belépéshez →' : 'Slide to explore →' }}</span>
+                    <span>Húzd el a belépéshez →</span>
                 </div>
 
                 <!-- Finom csúszó gomb -->
