@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { SharedComponentsModule } from './common/components/shared-components.module';
 import { AboutComponent } from './about/about.component';
 import { SkillsComponent } from './skills/skills.component';
-import { ProyectsComponent } from './proyects/proyects.component';
+import { ProjectsComponent } from './projects/projects.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { ExperiencesComponent } from './experiences/experiences.component';
 import { ContactComponent } from './contact/contact.component';
@@ -22,7 +22,7 @@ import { ContactComponent } from './contact/contact.component';
     HomeComponent,
     AboutComponent,
     SkillsComponent,
-    ProyectsComponent,
+    ProjectsComponent,
     ExperiencesComponent,
     ContactComponent
   ],

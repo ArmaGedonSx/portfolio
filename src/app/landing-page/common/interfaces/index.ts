@@ -1,2 +1,2 @@
-export * from './proyect.interface';
+export * from './project.interface';
 export * from './experience-information';

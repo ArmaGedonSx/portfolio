@@ -1,0 +1,61 @@
+@import '/src/assets/styles/color-variables.scss';
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.project-card-wrapper {
+  transition: background-color 0.3s ease;
+}
+
+.project-title {
+  display: block;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.45s cubic-bezier(0.23, 1, 0.32, 1) 0.08s,
+              transform 0.45s cubic-bezier(0.23, 1, 0.32, 1) 0.08s;
+  will-change: transform, opacity;
+}
+
+.project-description {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.45s cubic-bezier(0.23, 1, 0.32, 1) 0.14s,
+              transform 0.45s cubic-bezier(0.23, 1, 0.32, 1) 0.14s;
+  will-change: transform, opacity;
+}
+
+.card-buttons {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.45s cubic-bezier(0.23, 1, 0.32, 1) 0.20s,
+              transform 0.45s cubic-bezier(0.23, 1, 0.32, 1) 0.20s;
+  will-change: transform, opacity;
+}
+
+// Staggered reveal upon active slide
+:host-context(.swiper-slide-active) {
+  .project-title {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .project-description {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .card-buttons {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ================= REDUCED MOTION =================
+@media (prefers-reduced-motion: reduce) {
+  .project-title,
+  .project-description,
+  .card-buttons {
+    transform: none !important;
+    transition: opacity 0.15s ease !important;
+  }
+}

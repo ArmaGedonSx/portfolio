@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { gsap } from 'gsap';
 import { Languages } from './common/enums';
-import { IProyect } from './common/interfaces';
+import { IProject } from './common/interfaces';
 import { DataService } from './common/services/data.service';
 
 export interface Chapter {
@@ -20,7 +20,7 @@ export interface Chapter {
 export class LandingPageComponent implements OnInit, OnDestroy {
   DATA: any;
   skills: any = [];
-  projects: Array<IProyect> = [];
+  projects: Array<IProject> = [];
   currentLanguage: Languages = Languages.HUNGARIAN;
   private unsubscribe$: Subject<void> = new Subject();
 

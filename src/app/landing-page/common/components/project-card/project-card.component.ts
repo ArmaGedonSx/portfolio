@@ -1,16 +1,16 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
-import { IProyect } from '../../interfaces';
+import { IProject } from '../../interfaces';
 import { Languages } from '../../enums';
 import { DataService } from '../../services/data.service';
 
 @Component({
-  selector: 'app-proyect-card',
-  templateUrl: './proyect-card.component.html',
-  styleUrls: ['./proyect-card.component.scss']
+  selector: 'app-project-card',
+  templateUrl: './project-card.component.html',
+  styleUrls: ['./project-card.component.scss']
 })
-export class ProyectCardComponent implements OnInit, OnDestroy {
-  @Input() dataProject!: IProyect;
+export class ProjectCardComponent implements OnInit, OnDestroy {
+  @Input() dataProject!: IProject;
   @Input() hideImage: boolean = false;
   
   Languages = Languages;
